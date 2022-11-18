@@ -1,0 +1,16 @@
+3dview.apple-touch-icon.png filter=lfs diff=lfs merge=lfs -text
+3dview.manifest.json filter=lfs diff=lfs merge=lfs -text
+3dview.pck filter=lfs diff=lfs merge=lfs -text
+3dtest.zip filter=lfs diff=lfs merge=lfs -text
+3dview.512x512.png filter=lfs diff=lfs merge=lfs -text
+3dview.audio.worklet.js filter=lfs diff=lfs merge=lfs -text
+3dview.offline.html filter=lfs diff=lfs merge=lfs -text
+3dview.service.worker.js filter=lfs diff=lfs merge=lfs -text
+3dview.side.wasm filter=lfs diff=lfs merge=lfs -text
+3dview.wasm filter=lfs diff=lfs merge=lfs -text
+3dview.144x144.png filter=lfs diff=lfs merge=lfs -text
+3dview.180x180.png filter=lfs diff=lfs merge=lfs -text
+3dview.html filter=lfs diff=lfs merge=lfs -text
+3dview.png filter=lfs diff=lfs merge=lfs -text
+3dview.icon.png filter=lfs diff=lfs merge=lfs -text
+3dview.js filter=lfs diff=lfs merge=lfs -text
