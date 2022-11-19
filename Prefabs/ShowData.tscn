@@ -110,10 +110,10 @@ __meta__ = {
 }
 
 [node name="ZOOMP2" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666667
+anchor_left = 0.0666666
 anchor_top = 0.236667
 anchor_right = 0.933333
-anchor_bottom = 0.450481
+anchor_bottom = 0.416667
 text = "+"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -130,11 +130,21 @@ __meta__ = {
 }
 
 [node name="ZOOMN2" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666667
-anchor_top = 0.553333
+anchor_left = 0.0666666
+anchor_top = 0.586667
 anchor_right = 0.933333
-anchor_bottom = 0.767148
+anchor_bottom = 0.766667
 text = "-"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="rst" type="Button" parent="Control/WindowDialog/ZoomController"]
+anchor_left = 0.0666666
+anchor_top = 0.43
+anchor_right = 0.933333
+anchor_bottom = 0.573333
+text = "↩"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -162,3 +172,4 @@ margin_bottom = -52.0
 [connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMP2" to="." method="_on_ZOOMP2_pressed"]
 [connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMN" to="." method="_on_ZOOMN_pressed"]
 [connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMN2" to="." method="_on_ZOOMN2_pressed"]
+[connection signal="pressed" from="Control/WindowDialog/ZoomController/rst" to="." method="_on_rst_pressed"]

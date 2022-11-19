@@ -16,6 +16,7 @@ var y_offset = 0
 #warn
 var inner_count = 0
 
+var colors;
 
 var last_pos = null
 var last_size = null
@@ -23,6 +24,22 @@ var last_size = null
 # data to be shown
 var data = null;
 onready var graph2D = get_node("Control/WindowDialog/Graph2D")
+
+static func rand_color(c=0):
+	var colcon = [
+		Color.aquamarine,
+		Color.coral,
+		Color.hotpink,
+		Color.lightcoral,
+		Color.lightgreen,
+		Color.lightpink,
+		Color.lightsteelblue,
+		Color.blueviolet,
+		Color.brown,
+		Color.deeppink
+	]
+	return colcon[c%len(colcon)]
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node('Control/logo').texture = emoji;
@@ -36,6 +53,7 @@ func _process(delta):
 	var pos = self.global_translation
 	var camera = get_viewport().get_camera()
 	var screenpos = camera.unproject_position(pos)
+	get_node('Control/logo').visible = not camera.is_position_behind(pos)
 	get_node('Control/logo').position = screenpos
 	var d = camera.translation.distance_squared_to(translation)
 	get_node("Control/logo").modulate.a = clamp(range_lerp(d,0,100,1,0.5),0.4,1)
@@ -59,15 +77,24 @@ func generate_graph():
 		var _labels = data['labels']
 		var _data = data["data"]
 		var graphs = []
-		for i in _labels:
-			graphs.append(graph2D.add_curve(i))
+		var idx = 0;
+		for i in range(1,len(_labels)):
+			var g = graph2D.add_curve(_labels[i],rand_color(i),4.0)
+			graphs.append(g)
+			
+		#graph2D.x_axis_min_value = int(_data[0][0])
+		#graph2D.x_axis_max_value = graph2D.x_axis_min_value + 1000
 		
 		for g in range(len(graphs)):
 			var graph = graphs[g]
 			var label = _labels[g]
-			for x in range(1,len(_data)):
+			
+			for x in range(len(_data)):
 				var d = Vector2(x,_data[x][g])
 				graph2D.add_point(graph,d)
+				if(len(_data) < 2):
+					graph2D.add_point(graph,d+Vector2(1,0))
+				
 		
 			
 		
@@ -143,3 +170,10 @@ func _on_ZOOMN2_pressed():
 	graph2D.y_axis_max_value *= 1.5
 	graph2D.y_axis_min_value *= 1.5
 	generate_graph()
+
+
+func _on_rst_pressed():
+	graph2D.y_axis_max_value = 10
+	graph2D.y_axis_min_value = 0
+	generate_graph()
+	

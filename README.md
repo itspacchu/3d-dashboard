@@ -1,15 +1,13 @@
-# chart-gd
+# 3D Dashboard view for SmartCityLivingLab
 
-Tested on Godot Engine 3.1. For Godot engine 2.1 please use the branch [2.1](https://github.com/binogure-studio/chart-gd/tree/2.1)
+This is a re-implementation of SCRC Lab's 3D Dashboard in Godot Engine.
 
-## Preview
+---
 
-![Demo](./assets/charts.gif "Example")
+## Images/Videos
 
-## Usage
+![video](https://gitlab.com/scrc-iiit/3d-dashboard/-/raw/main/media/fps_demo.mp4)
 
-See example
+![uwu1](https://gitlab.com/scrc-iiit/3d-dashboard/-/raw/main/media/01.png)
 
-# License
-
-See [License file](./LICENSE)
+![uwu2](https://gitlab.com/scrc-iiit/3d-dashboard/-/raw/main/media/02.png)

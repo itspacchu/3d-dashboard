@@ -1,0 +1,2 @@
+exports/3dtest.zip filter=lfs diff=lfs merge=lfs -text
+exports/3dview.pck filter=lfs diff=lfs merge=lfs -text
