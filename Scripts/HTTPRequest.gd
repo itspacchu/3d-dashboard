@@ -4,7 +4,8 @@ func gen_link(base,nv,nn,type='la'):
 	return base + nv + "/" + nn + "/Data?rcn=4"
 
 func get_data(node_v,node_n,type_da='la'):
-	var onem2mbase = "http://onem2m.iiit.ac.in:443/~/in-cse/in-name/"
+	#var onem2mbase = "http://onem2m.iiit.ac.in:443/~/in-cse/in-name/"
+	var onem2mbase = "https://onem2m.iiit.ac.in/~/in-cse/in-name/"
 	var headers = ['X-M2M-Origin: guest:guest',
 		'Accept: application/json']
 	print("onem2m Loaded")

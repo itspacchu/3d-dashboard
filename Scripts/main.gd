@@ -11,6 +11,7 @@ onready var main_cam  = get_viewport().get_camera()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("init")
+
 	$InterpolatedCamera/AnimationPlayer.play("CameraInit")
 	labels = $CampusModel/campus_2/Labels.get_children()
 	

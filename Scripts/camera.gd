@@ -52,10 +52,18 @@ func _input(event):
 			KEY_E:
 				_e = event.pressed
 
+func _update_bokeh(delta):
+	var col = $RayCast.get_collision_point()
+	$CSGBox.global_translation = col
+	var dist = global_translation.distance_to(col)
+	get_parent().get_node('WorldEnvironment').environment.dof_blur_far_distance = dist
+	print(dist)
+	
 # Updates mouselook and movement every frame
 func _process(delta):
 	_update_mouselook()
 	_update_movement(delta)
+	_update_bokeh(delta)
 
 # Updates camera movement
 func _update_movement(delta):
