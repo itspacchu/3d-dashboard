@@ -5,10 +5,16 @@ func gen_link(base,nv,nn,type='la'):
 
 func get_data(node_v,node_n,type_da='la'):
 	#var onem2mbase = "http://onem2m.iiit.ac.in:443/~/in-cse/in-name/"
-	var onem2mbase = "https://onem2m.iiit.ac.in/~/in-cse/in-name/"
-	var headers = ['X-M2M-Origin: guest:guest',
-		'Accept: application/json']
-	print("onem2m Loaded")
+	#var onem2mbase = "https://onem2m.iiit.ac.in/~/in-cse/in-name/"
+	var onem2mbase = "https://onem2m.iiit.prashantnook.in/~/in-cse/in-name/"
+	
+	var headers = [
+		'X-M2M-Origin: guest:guest',
+		'Accept: application/json',
+		"Access-Control-Allow-Credentials: true",
+		"Access-Control-Allow-Origin: *"
+		]
+
 	var body = null
 	var res = request(gen_link(onem2mbase,node_v,node_n,type_da),headers)
 	if res != OK:

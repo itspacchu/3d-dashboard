@@ -56,7 +56,7 @@ func _process(delta):
 	get_node('Control/logo').visible = not camera.is_position_behind(pos)
 	get_node('Control/logo').position = screenpos
 	var d = camera.translation.distance_squared_to(translation)
-	get_node("Control/logo").modulate.a = clamp(range_lerp(d,0,100,1,0.5),0.4,1)
+	get_node("Control/logo").modulate.a = clamp(range_lerp(d,0,800,1,0.1),0.1,1)
 
 func _on_WindowDialog_popup_hide():
 	last_pos = get_node('Control/WindowDialog').rect_position
@@ -103,11 +103,11 @@ func onSpritePressed():
 	var windiag = get_node('Control/WindowDialog');
 	var recto = get_viewport().size
 	
-	var super = get_parent().get_parent();
+	var super = get_parent().get_parent().get_parent();
 	
-	super.target_pos = tgtpos
-	super.target_rot = tgtrot
-	super.movecam = true;
+#	super.target_pos = tgtpos
+#	super.target_rot = tgtrot
+#	super.movecam = true;
 	
 	camera.translation = tgtpos
 	camera.rotation_degrees = tgtrot

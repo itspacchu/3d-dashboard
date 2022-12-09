@@ -2,6 +2,7 @@
 
 [resource]
 resource_name = "CameraInit"
+length = 2.0
 tracks/0/type = "transform"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -16,8 +17,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -6.7765e-06, -0.25, 0, 0.25, 0, -1.22986e-06, -0.6, 1.22986e-06, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
+"points": PoolRealArray( 9.932, -0.25, 0, 0.25, 0, 23.553, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath(".:translation:y")
@@ -26,8 +27,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 18.1465, -0.25, 0, 0.25, 0, 35.3101, -0.6, -0.310089, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
+"points": PoolRealArray( 74, -0.25, 0, 0.25, 0, 9.941, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
 }
 tracks/3/type = "bezier"
 tracks/3/path = NodePath(".:translation:z")
@@ -36,8 +37,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 7.32771, -0.25, 0, 0.25, 0, -56.1185, -0.7, 0.118454, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
+"points": PoolRealArray( -21.439, -0.25, 0, 0.25, 0, -29.563, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath(".:rotation_degrees:x")
@@ -46,8 +47,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"points": PoolRealArray( -90, -0.25, 0, 0.25, 0, -40, -0.6, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
+"points": PoolRealArray( -90, -0.25, 0, 0.8, 3.5, -11.481, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
 }
 tracks/5/type = "bezier"
 tracks/5/path = NodePath(".:rotation_degrees:y")
@@ -56,8 +57,8 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"points": PoolRealArray( 180, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 180, -0.25, 0, 0.25, 0, 141.897, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
 }
 tracks/6/type = "bezier"
 tracks/6/path = NodePath(".:rotation_degrees:z")
@@ -66,17 +67,17 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath(".:fov")
-tracks/7/interp = 1
+tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 61.0 ]
