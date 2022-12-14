@@ -45,7 +45,8 @@ window_title = "Node Name"
 resizable = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowDialog"]
-visible = false
+anchor_top = -0.768041
+anchor_bottom = 0.000554114
 margin_top = 304.0
 margin_right = 420.0
 margin_bottom = 339.785

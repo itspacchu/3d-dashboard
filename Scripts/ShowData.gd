@@ -56,15 +56,17 @@ func _process(delta):
 	get_node('Control/logo').visible = not camera.is_position_behind(pos)
 	get_node('Control/logo').position = screenpos
 	var d = camera.translation.distance_squared_to(translation)
-	get_node("Control/logo").modulate.a = clamp(range_lerp(d,0,800,1,0.1),0.1,1)
+	get_node("Control/logo").modulate.a = clamp(range_lerp(d,0,500,1,0.2),0,1)
 
 func _on_WindowDialog_popup_hide():
 	last_pos = get_node('Control/WindowDialog').rect_position
 	last_size = get_node('Control/WindowDialog').rect_size
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		var logo = get_node("Control/logo")
+		var camera = get_viewport().get_camera()
 		if(logo.get_rect().has_point(logo.to_local(event.position))):
 			onSpritePressed()
 
@@ -99,6 +101,7 @@ func generate_graph():
 			
 		
 func onSpritePressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var camera = get_viewport().get_camera()
 	var windiag = get_node('Control/WindowDialog');
 	var recto = get_viewport().size
@@ -109,8 +112,8 @@ func onSpritePressed():
 #	super.target_rot = tgtrot
 #	super.movecam = true;
 	
-	camera.translation = tgtpos
-	camera.rotation_degrees = tgtrot
+#	camera.translation = tgtpos
+#	camera.rotation_degrees = tgtrot
 	
 	do_request()
 	windiag.popup_centered()
@@ -142,7 +145,7 @@ func _on_Button_pressed() -> void:
 		inner_count = 0;
 		return
 	do_request()
-	generate_graph()
+	#generate_graph()
 	get_node('Control/WindowDialog/RichTextLabel').text = str(data)
 
 

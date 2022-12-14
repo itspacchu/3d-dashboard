@@ -10,14 +10,17 @@ onready var main_cam  = get_viewport().get_camera()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#$WorldEnvironment/AnimationPlayer.play('DAYNIGHT')
 	print("init")
-
-	$InterpolatedCamera/AnimationPlayer.play("CameraInit")
 	labels = $CampusModel/campus_2/Labels.get_children()
+	if(OS.get_time().hour > 6 and OS.get_time().hour < 18):
+		$WorldEnvironment/AnimationPlayer.seek(0)
+	else:
+		$WorldEnvironment/AnimationPlayer.seek(0.2)
 	
 func _process(delta: float) -> void:
 	for label in labels:
-		var d = $InterpolatedCamera.translation.distance_to(label.translation)
+		var d = main_cam.translation.distance_to(label.translation)
 		label.pixel_size = max(0.01,0.01*(d/50))
 	
 	
