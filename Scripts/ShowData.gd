@@ -6,6 +6,7 @@ export var node_name = "AQ-AD95-00"
 export (Texture) var emoji;
 export (Vector3) var tgtpos
 export (Vector3) var tgtrot;
+export (float) var max_distance_thresh = 20;
 
 var windowd = null
 var BUFF = 30;
@@ -23,6 +24,7 @@ var last_size = null
 
 # data to be shown
 var data = null;
+var oneshot = true
 onready var graph2D = get_node("Control/WindowDialog/Graph2D")
 
 static func rand_color(c=0):
@@ -45,6 +47,7 @@ func _ready():
 	get_node('Control/logo').texture = emoji;
 	get_node('Control/WindowDialog/logo').texture = emoji;
 	windowd = get_node('Control/WindowDialog')
+	$Control/logo/Label.text = node_name
 
 func do_request():
 	get_node('HTTPRequest').get_data(node_vertical,node_name)
@@ -55,20 +58,43 @@ func _process(delta):
 	var screenpos = camera.unproject_position(pos)
 	get_node('Control/logo').visible = not camera.is_position_behind(pos)
 	get_node('Control/logo').position = screenpos
-	var d = camera.translation.distance_squared_to(translation)
-	get_node("Control/logo").modulate.a = clamp(range_lerp(d,0,500,1,0.2),0,1)
 
 func _on_WindowDialog_popup_hide():
+	var camera = get_viewport().get_camera()
+	get_node('Control/WindowDialog').visible = false
 	last_pos = get_node('Control/WindowDialog').rect_position
 	last_size = get_node('Control/WindowDialog').rect_size
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func is_closeby():
+	return get_viewport().get_camera().global_translation.distance_squared_to(global_translation) < max_distance_thresh
+
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		var logo = get_node("Control/logo")
-		var camera = get_viewport().get_camera()
+	var logo = get_node("Control/logo")
+	if(event is InputEventMouseMotion):
 		if(logo.get_rect().has_point(logo.to_local(event.position))):
-			onSpritePressed()
+			if(is_closeby()):
+				logo.self_modulate = Color.white
+				logo.modulate.a = 1;
+				logo.scale = Vector2.ONE*1
+				logo.get_node("Label").visible = true
+				logo.get_node("Panel").visible = true
+				if(oneshot == true):
+					do_request()
+					oneshot = false
+			else:
+				logo.self_modulate = Color.red
+		else:
+			logo.get_node("Label").visible = false
+			logo.get_node("Panel").visible = false
+			logo.self_modulate = Color.white
+			logo.modulate.a = 0.1
+			logo.scale = Vector2.ONE * 0.6
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		if(is_closeby()):
+			var camera = get_viewport().get_camera()
+			if(logo.get_rect().has_point(logo.to_local(event.position))):
+				onSpritePressed()
 
 func generate_graph():
 	if(len(graph2D._curves)):
@@ -101,21 +127,13 @@ func generate_graph():
 			
 		
 func onSpritePressed():
+	get_viewport().get_camera().get_parent().get_parent().get_parent().get_parent().is_attacking = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var camera = get_viewport().get_camera()
 	var windiag = get_node('Control/WindowDialog');
 	var recto = get_viewport().size
-	
 	var super = get_parent().get_parent().get_parent();
 	
-#	super.target_pos = tgtpos
-#	super.target_rot = tgtrot
-#	super.movecam = true;
-	
-#	camera.translation = tgtpos
-#	camera.rotation_degrees = tgtrot
-	
-	do_request()
 	windiag.popup_centered()
 	windiag.window_title = node_name
 	if(last_size != null):
@@ -137,7 +155,7 @@ func _on_Button_pressed() -> void:
 		"Onem2m is not on your father's server"
 	]
 	inner_count += 1;
-	if(inner_count > 5):
+	if(inner_count > 10):
 		random_lines.shuffle()
 		get_node('Control/err/RichTextLabel').text = random_lines[0]
 		get_node('Control/err').popup_centered()
@@ -145,7 +163,6 @@ func _on_Button_pressed() -> void:
 		inner_count = 0;
 		return
 	do_request()
-	#generate_graph()
 	get_node('Control/WindowDialog/RichTextLabel').text = str(data)
 
 

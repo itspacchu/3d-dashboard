@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/HTTPRequest.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ShowData.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://godwaita/gtk-colors.gd" type="Script" id=4]
 [ext_resource path="res://images/cloud.svg" type="Texture" id=5]
 [ext_resource path="res://addons/graph_2d/graph_2d.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/fontdesho.tres" type="Theme" id=7]
 
 [node name="NodeBase" type="Spatial"]
 script = ExtResource( 2 )
@@ -31,11 +32,97 @@ __meta__ = {
 }
 
 [node name="logo" type="Sprite" parent="Control"]
+modulate = Color( 1, 1, 1, 0.196078 )
+scale = Vector2( 0.444444, 0.444444 )
 z_index = -10
 texture = ExtResource( 5 )
 
+[node name="Label" type="Label" parent="Control/logo"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -81.0
+margin_right = 184.0
+margin_bottom = -55.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "WN-PACCHU"
+align = 1
+
+[node name="Panel" type="PanelContainer" parent="Control/logo"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -344.25
+margin_top = -234.0
+margin_right = -124.25
+margin_bottom = 162.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/logo/Panel"]
+margin_left = 14.0
+margin_top = 7.0
+margin_right = 206.0
+margin_bottom = 389.0
+
+[node name="Status" type="HBoxContainer" parent="Control/logo/Panel/VBoxContainer"]
+margin_right = 192.0
+margin_bottom = 17.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/logo/Panel/VBoxContainer/Status"]
+margin_left = 49.0
+margin_right = 86.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Status"
+
+[node name="status" type="Label" parent="Control/logo/Panel/VBoxContainer/Status"]
+margin_left = 90.0
+margin_right = 143.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Loading..."
+
+[node name="LastEpoch" type="HBoxContainer" parent="Control/logo/Panel/VBoxContainer"]
+visible = false
+margin_top = 21.0
+margin_right = 192.0
+margin_bottom = 38.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/logo/Panel/VBoxContainer/LastEpoch"]
+margin_left = 43.0
+margin_right = 117.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Last Updated"
+
+[node name="status" type="Label" parent="Control/logo/Panel/VBoxContainer/LastEpoch"]
+margin_left = 121.0
+margin_right = 148.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Now"
+
+[node name="Tree" type="Tree" parent="Control/logo/Panel/VBoxContainer"]
+margin_top = 21.0
+margin_right = 192.0
+margin_bottom = 382.0
+rect_min_size = Vector2( 192, 300 )
+mouse_filter = 2
+size_flags_vertical = 3
+__meta__ = {
+"_editor_description_": "ola"
+}
+
 [node name="WindowDialog" type="WindowDialog" parent="Control"]
-visible = true
 margin_left = 24.0
 margin_top = 78.0
 margin_right = 444.0
@@ -45,12 +132,11 @@ window_title = "Node Name"
 resizable = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowDialog"]
-anchor_top = -0.768041
-anchor_bottom = 0.000554114
-margin_top = 304.0
-margin_right = 420.0
-margin_bottom = 339.785
+anchor_top = 0.0154642
+anchor_right = 1.0
+anchor_bottom = 0.876289
 rect_min_size = Vector2( 0, 35.785 )
+mouse_filter = 1
 text = "Epoch :"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -154,10 +240,10 @@ __meta__ = {
 }
 
 [node name="err" type="AcceptDialog" parent="Control"]
-margin_left = 19.0
-margin_top = 69.0
-margin_right = 432.0
-margin_bottom = 221.0
+margin_left = 469.0
+margin_top = 79.0
+margin_right = 882.0
+margin_bottom = 231.0
 window_title = "Error"
 resizable = true
 
