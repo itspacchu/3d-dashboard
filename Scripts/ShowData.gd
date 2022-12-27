@@ -8,9 +8,12 @@ export (Vector3) var tgtpos
 export (Vector3) var tgtrot;
 export (float) var max_distance_thresh = 20;
 
+export var showable = true
+
 var windowd = null
 var BUFF = 30;
 var zoom = 1
+var is_window_open = false
 
 var y_offset = 0
 
@@ -24,8 +27,8 @@ var last_size = null
 
 # data to be shown
 var data = null;
+var labels = Array();
 var oneshot = true
-onready var graph2D = get_node("Control/WindowDialog/Graph2D")
 
 static func rand_color(c=0):
 	var colcon = [
@@ -61,75 +64,60 @@ func _process(delta):
 
 func _on_WindowDialog_popup_hide():
 	var camera = get_viewport().get_camera()
-	get_node('Control/WindowDialog').visible = false
+	is_window_open = false
+	camera.get_parent().get_parent().get_parent().set_process_input(true)
+	get_node('Control/WindowDialog').visible = false and showable
 	last_pos = get_node('Control/WindowDialog').rect_position
 	last_size = get_node('Control/WindowDialog').rect_size
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func is_closeby():
-	return get_viewport().get_camera().global_translation.distance_squared_to(global_translation) < max_distance_thresh
+	return get_dst() < max_distance_thresh
+
+func get_dst():
+	return get_viewport().get_camera().global_translation.distance_squared_to(global_translation)
 
 func _input(event):
+	$Control/logo/dist.text = str(int(get_dst())) + " m"
 	var logo = get_node("Control/logo")
 	if(event is InputEventMouseMotion):
-		if(logo.get_rect().has_point(logo.to_local(event.position))):
+		if(logo.get_rect().has_point(logo.to_local(get_viewport().size/2))):
 			if(is_closeby()):
+				$Control/logo/dist.visible = false and showable
 				logo.self_modulate = Color.white
 				logo.modulate.a = 1;
 				logo.scale = Vector2.ONE*1
-				logo.get_node("Label").visible = true
-				logo.get_node("Panel").visible = true
+				logo.get_node("Label").visible = true and showable
+				logo.get_node("Panel").visible = true and showable
 				if(oneshot == true):
 					do_request()
 					oneshot = false
 			else:
-				logo.self_modulate = Color.red
+				logo.self_modulate = Color.orangered
+				logo.scale = Vector2.ONE*0.75
+				$Control/logo/dist.rect_scale = Vector2.ONE*1.25
+				logo.modulate.a = 0.8
 		else:
-			logo.get_node("Label").visible = false
-			logo.get_node("Panel").visible = false
+			$Control/logo/dist.rect_scale = Vector2.ONE
+			$Control/logo/dist.visible = true and showable
+			logo.get_node("Label").visible = false and showable
+			logo.get_node("Panel").visible = false and showable
 			logo.self_modulate = Color.white
-			logo.modulate.a = 0.1
+			logo.modulate.a = 0.2
 			logo.scale = Vector2.ONE * 0.6
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		if(is_closeby()):
+		if(is_closeby() and !is_window_open and data != null):
 			var camera = get_viewport().get_camera()
-			if(logo.get_rect().has_point(logo.to_local(event.position))):
+			if(logo.get_rect().has_point(logo.to_local(get_viewport().size/2))):
 				onSpritePressed()
-
-func generate_graph():
-	if(len(graph2D._curves)):
-		for i in range(len(graph2D._curves)):
-			graph2D.remove_curve(i)
-			
-	if(data != null):
-		var _labels = data['labels']
-		var _data = data["data"]
-		var graphs = []
-		var idx = 0;
-		for i in range(1,len(_labels)):
-			var g = graph2D.add_curve(_labels[i],rand_color(i),4.0)
-			graphs.append(g)
-			
-		#graph2D.x_axis_min_value = int(_data[0][0])
-		#graph2D.x_axis_max_value = graph2D.x_axis_min_value + 1000
-		
-		for g in range(len(graphs)):
-			var graph = graphs[g]
-			var label = _labels[g]
-			
-			for x in range(len(_data)):
-				var d = Vector2(x,_data[x][g])
-				graph2D.add_point(graph,d)
-				if(len(_data) < 2):
-					graph2D.add_point(graph,d+Vector2(1,0))
-				
-		
-			
-		
+	
 func onSpritePressed():
+	is_window_open = true
 	get_viewport().get_camera().get_parent().get_parent().get_parent().get_parent().is_attacking = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var camera = get_viewport().get_camera()
+	camera.get_parent().get_parent().get_parent().set_process_input(false)
 	var windiag = get_node('Control/WindowDialog');
 	var recto = get_viewport().size
 	var super = get_parent().get_parent().get_parent();
@@ -138,14 +126,47 @@ func onSpritePressed():
 	windiag.window_title = node_name
 	if(last_size != null):
 		windiag.rect_size = last_size
-	else:
-		windiag.rect_size = Vector2(recto.x/3 - 2*BUFF,recto.y - 3*BUFF);
 	if(last_pos != null):
 		windiag.rect_position = last_pos
-	else:
-		windiag.rect_position = Vector2(recto.x/1.5 - BUFF,2*BUFF)
-	
-	#show data
+		
+	var lbl = labels.slice(1,len(labels))
+	var timestamps = Array()
+	var restructured_data = Array()
+	for i in len(lbl):
+		restructured_data.append(Array())
+	$Control/logo/Panel/VBoxContainer/nodata.visible = false and showable
+	if(data == null):
+		$Control/logo/Panel/VBoxContainer/nodata.visible = true	and showable
+		$Control/err.popup_centered()
+		get_node('Control/err').window_title = "No Data Available"
+		get_node('Control/err/RichTextLabel').text = "No Data Available"
+		return
+		
+	for datapoints in data:
+		var dp = strtolist(datapoints["con"]);
+		for val in len(labels):
+			if(val < 1):
+				var ts = OS.get_datetime_from_unix_time(int(dp[val]))
+				if(0 == int(dp[val])):
+					ts = OS.get_datetime()
+				timestamps.append("%02d:%02d , %d-%d"%[ts.hour,ts.minute,ts.day,ts.month])
+			else:
+				if('nan' in dp[val]):
+					if(val-1 > len(dp)):
+						continue
+					restructured_data[val-1].append(0.0)
+				else:
+					if(val-1 > len(dp)):
+						continue
+					restructured_data[val-1].append(float(dp[val]))
+
+	var sc = $Control/WindowDialog/VBoxContainer/SuperChart
+	sc.read_data(timestamps,restructured_data,lbl)
+	sc.init_all()
+
+func strtolist(tstr):
+	return tstr.replace('nan','0.0').replace("[","").replace("]","").split(',')
+
 	
 func _on_Button_pressed() -> void:
 	var random_lines = [
@@ -163,37 +184,7 @@ func _on_Button_pressed() -> void:
 		inner_count = 0;
 		return
 	do_request()
-	get_node('Control/WindowDialog/RichTextLabel').text = str(data)
-
-
-func _on_ZOOMP_pressed():
-	graph2D.y_axis_max_value += 3
-	graph2D.y_axis_min_value += 3
-	generate_graph()
-
-
-func _on_ZOOMN_pressed():
-	graph2D.y_axis_max_value -= 3
-	graph2D.y_axis_min_value -= 3
-	generate_graph()
-
-
-func _on_ZOOMP2_pressed():
-	if(graph2D.y_axis_max_value > 1):
-		graph2D.y_axis_max_value /= 1.5
-		graph2D.y_axis_min_value /= 1.5
-		generate_graph()
-	
-
-
-func _on_ZOOMN2_pressed():
-	graph2D.y_axis_max_value *= 1.5
-	graph2D.y_axis_min_value *= 1.5
-	generate_graph()
-
-
-func _on_rst_pressed():
-	graph2D.y_axis_max_value = 10
-	graph2D.y_axis_min_value = 0
-	generate_graph()
-	
+	get_node('Control/WindowDialog/VBoxContainer/RichTextLabel').text = str(data)
+	$Control/WindowDialog.visible = false and showable
+	if(showable):
+		onSpritePressed()

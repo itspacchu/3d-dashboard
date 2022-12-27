@@ -2,12 +2,10 @@ extends HTTPRequest
 
 func gen_link(base,nv,nn,type='?rcn=4'):
 	var link = base + nv + "/" + nn + "/Data" + type
-	print(link)
+	print("GET " + link)
 	return link
 
 func get_data(node_v,node_n,type_da='la'):
-	#var onem2mbase = "http://onem2m.iiit.ac.in:443/~/in-cse/in-name/"
-	#var onem2mbase = "https://onem2m.iiit.ac.in/~/in-cse/in-name/"
 	var onem2mbase = "https://onem2m.iiit.prashantnook.in/~/in-cse/in-name/"
 	
 	var headers = [
@@ -26,11 +24,18 @@ func get_data(node_v,node_n,type_da='la'):
 func _on_HTTPRequest_request_completed(result, _response_code, _headers, body):
 	var response =  parse_json(body.get_string_from_utf8())
 	if(typeof(response)==TYPE_DICTIONARY):
-		get_parent().data = response["m2m:cnt"]
-		get_parent().get_node("Control/WindowDialog/RichTextLabel").text =  str(response["m2m:cnt"])
+		if("m2m:cin" in response["m2m:cnt"].keys()):
+			get_parent().data = response["m2m:cnt"]["m2m:cin"]
+			get_parent().get_node("Control/logo/Panel/VBoxContainer/nodata").visible = false
+		else:
+			get_parent().data = null
+			get_parent().get_node("Control/logo/Panel/VBoxContainer/nodata").visible = true
+			get_parent().get_node("Control/logo/Panel/VBoxContainer/nodata").text = "No data available at the moment!"
+		get_parent().get_node("Control/WindowDialog/VBoxContainer/RichTextLabel").text =  str(response["m2m:cnt"])
 		get_parent().get_node("Control/logo/Panel/VBoxContainer/Status/status").text = "Online"
 		get_parent().get_node("Control/logo/Panel/VBoxContainer/LastEpoch").visible = true
 		var labels = response["m2m:cnt"]["lbl"]
+		get_parent().labels = labels
 		
 		var tree = get_parent().get_node("Control/logo/Panel/VBoxContainer/Tree")
 		var root = tree.create_item()

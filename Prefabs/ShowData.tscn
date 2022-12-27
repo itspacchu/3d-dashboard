@@ -1,18 +1,33 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/HTTPRequest.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ShowData.gd" type="Script" id=2]
 [ext_resource path="res://godwaita/theme.tres" type="Theme" id=3]
 [ext_resource path="res://godwaita/gtk-colors.gd" type="Script" id=4]
 [ext_resource path="res://images/cloud.svg" type="Texture" id=5]
-[ext_resource path="res://addons/graph_2d/graph_2d.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/fontdesho_small.tres" type="Theme" id=6]
 [ext_resource path="res://Prefabs/fontdesho.tres" type="Theme" id=7]
+[ext_resource path="res://Demo/HandWrite.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://addons/DrunkBull.SuperChart/src/main/SuperChart/SuperChart.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/test_graph.gd" type="Script" id=10]
+[ext_resource path="res://Resources/Music/nodemusic.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Prefabs/fontdesho_small_outlined.tres" type="Theme" id=12]
+[ext_resource path="res://Resources/Fonts/firacode.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 13 )
 
 [node name="NodeBase" type="Spatial"]
 script = ExtResource( 2 )
 emoji = ExtResource( 5 )
-tgtpos = Vector3( 16.665, -0.821, -4.937 )
-tgtrot = Vector3( 0, 116.834, 0 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 script = ExtResource( 1 )
@@ -34,7 +49,7 @@ __meta__ = {
 [node name="logo" type="Sprite" parent="Control"]
 modulate = Color( 1, 1, 1, 0.196078 )
 scale = Vector2( 0.444444, 0.444444 )
-z_index = -10
+z_index = -20
 texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Control/logo"]
@@ -70,23 +85,27 @@ margin_left = 14.0
 margin_top = 7.0
 margin_right = 206.0
 margin_bottom = 389.0
+theme = ExtResource( 6 )
 
 [node name="Status" type="HBoxContainer" parent="Control/logo/Panel/VBoxContainer"]
 margin_right = 192.0
-margin_bottom = 17.0
+margin_bottom = 16.0
+theme = ExtResource( 6 )
+custom_constants/separation = 32
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/logo/Panel/VBoxContainer/Status"]
-margin_left = 49.0
-margin_right = 86.0
-margin_bottom = 17.0
+margin_left = 24.0
+margin_right = 66.0
+margin_bottom = 16.0
+theme = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Status"
 
 [node name="status" type="Label" parent="Control/logo/Panel/VBoxContainer/Status"]
-margin_left = 90.0
-margin_right = 143.0
-margin_bottom = 17.0
+margin_left = 98.0
+margin_right = 168.0
+margin_bottom = 16.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Loading..."
 
@@ -95,6 +114,7 @@ visible = false
 margin_top = 21.0
 margin_right = 192.0
 margin_bottom = 38.0
+custom_constants/separation = 32
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/logo/Panel/VBoxContainer/LastEpoch"]
@@ -112,58 +132,49 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Now"
 
 [node name="Tree" type="Tree" parent="Control/logo/Panel/VBoxContainer"]
-margin_top = 21.0
+margin_top = 20.0
 margin_right = 192.0
-margin_bottom = 382.0
+margin_bottom = 362.0
 rect_min_size = Vector2( 192, 300 )
 mouse_filter = 2
 size_flags_vertical = 3
+theme_type_variation = "SMOL"
+custom_constants/draw_relationship_lines = 1
 __meta__ = {
 "_editor_description_": "ola"
 }
 
+[node name="nodata" type="Label" parent="Control/logo/Panel/VBoxContainer"]
+margin_top = 366.0
+margin_right = 192.0
+margin_bottom = 382.0
+text = "Connecting to onem2m"
+
+[node name="dist" type="Label" parent="Control/logo"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.75
+margin_top = -13.5
+margin_right = -12.75
+margin_bottom = 12.5
+theme = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "23 m"
+align = 1
+
 [node name="WindowDialog" type="WindowDialog" parent="Control"]
 margin_left = 24.0
 margin_top = 78.0
-margin_right = 444.0
-margin_bottom = 466.0
-rect_min_size = Vector2( 300, 240 )
+margin_right = 1160.0
+margin_bottom = 725.0
+rect_min_size = Vector2( 1160, 600 )
+theme = ExtResource( 6 )
 window_title = "Node Name"
 resizable = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowDialog"]
-anchor_top = 0.0154642
-anchor_right = 1.0
-anchor_bottom = 0.876289
-rect_min_size = Vector2( 0, 35.785 )
-mouse_filter = 1
-text = "Epoch :"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Graph2D" type="Control" parent="Control/WindowDialog"]
-visible = false
-anchor_left = 0.0714286
-anchor_right = 1.0
-anchor_bottom = 0.773196
-grow_vertical = 0
-rect_clip_content = true
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-background_color = Color( 0.133333, 0.133333, 0.133333, 1 )
-x_axis_min_value = 0.0
-x_axis_max_value = 30.0
-x_axis_grad_number = 11
-x_axis_label = "Time"
-y_axis_min_value = 0.0
-y_axis_max_value = 100.0
-y_axis_grad_number = 7
-y_axis_label = "Data"
-grid_horizontal_visible = true
-grid_vertical_visible = false
 
 [node name="logo" type="TextureRect" parent="Control/WindowDialog"]
 margin_left = 5.0
@@ -177,67 +188,45 @@ expand = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -49.0
-margin_bottom = -13.0
+margin_left = 15.0
+margin_top = -57.0
+margin_right = -15.0
+margin_bottom = -15.0
+theme = ExtResource( 6 )
 text = "Update"
 
-[node name="ZoomController" type="Control" parent="Control/WindowDialog"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 17.0
+margin_right = -16.0
+margin_bottom = -76.0
+script = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/WindowDialog/VBoxContainer"]
 visible = false
-anchor_right = 0.0714286
-anchor_bottom = 0.773196
+margin_right = 1127.0
+margin_bottom = 35.785
+rect_min_size = Vector2( 0, 35.785 )
+mouse_filter = 1
+theme = ExtResource( 6 )
+text = "Epoch :"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ZOOMP" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666667
-anchor_top = 0.00333333
-anchor_right = 0.933333
-anchor_bottom = 0.217148
-text = "↑"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="ZOOMP2" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666666
-anchor_top = 0.236667
-anchor_right = 0.933333
-anchor_bottom = 0.416667
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="ZOOMN" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666667
-anchor_top = 0.776667
-anchor_right = 0.933333
-anchor_bottom = 0.990481
-text = "↓"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="ZOOMN2" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666666
-anchor_top = 0.586667
-anchor_right = 0.933333
-anchor_bottom = 0.766667
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="rst" type="Button" parent="Control/WindowDialog/ZoomController"]
-anchor_left = 0.0666666
-anchor_top = 0.43
-anchor_right = 0.933333
-anchor_bottom = 0.573333
-text = "↩"
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="SuperChart" parent="Control/WindowDialog/VBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1127.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 1100, 550 )
+pool_point_color = PoolColorArray( 0.262745, 0.603922, 0.592157, 1, 0.403922, 0.537255, 0.513726, 1, 0.901961, 0.866667, 0.768627, 1, 1, 0.792157, 0.784314, 1, 1, 0.619608, 0.619608, 1, 0.996078, 0.815686, 0.286275, 1 )
+pool_line_color = PoolColorArray( 0.132, 0.3, 0.2944, 1, 0.225, 0.3, 0.28625, 1, 0.3, 0.288, 0.255, 1, 0.3, 0.2362, 0.234, 1, 0.3, 0.186, 0.186, 1, 0.3, 0.24675, 0.087, 1 )
+pool_point_type = PoolStringArray( "circle", "rect", "triangle", "circle", "rect", "triangle" )
+font_x_label = SubResource( 1 )
+font_y_label = SubResource( 2 )
+font_line_title_info = SubResource( 3 )
 
 [node name="err" type="AcceptDialog" parent="Control"]
 margin_left = 469.0
@@ -253,13 +242,19 @@ anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 8.0
 margin_right = -8.0
-margin_bottom = -52.0
+margin_bottom = -49.0
+
+[node name="delete" type="CSGSphere" parent="."]
+visible = false
+radius = 0.105154
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 11 )
+unit_db = -5.0
+pitch_scale = 0.5
+autoplay = true
+max_distance = 6.0
 
 [connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_HTTPRequest_request_completed"]
 [connection signal="popup_hide" from="Control/WindowDialog" to="." method="_on_WindowDialog_popup_hide"]
 [connection signal="pressed" from="Control/WindowDialog/update" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMP" to="." method="_on_ZOOMP_pressed"]
-[connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMP2" to="." method="_on_ZOOMP2_pressed"]
-[connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMN" to="." method="_on_ZOOMN_pressed"]
-[connection signal="pressed" from="Control/WindowDialog/ZoomController/ZOOMN2" to="." method="_on_ZOOMN2_pressed"]
-[connection signal="pressed" from="Control/WindowDialog/ZoomController/rst" to="." method="_on_rst_pressed"]

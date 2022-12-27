@@ -87,7 +87,7 @@ var pivot := Vector2()
 func _input(event):
 	if event is InputEventMouseButton:
 		if _ContainerChart.get_rect().has_point(event.position):
-			if event.button_index == BUTTON_LEFT:
+			if event.button_index == BUTTON_MIDDLE:
 				dragging = event.pressed
 				if is_instance_valid(focusing_point):
 					view_point(focusing_point)

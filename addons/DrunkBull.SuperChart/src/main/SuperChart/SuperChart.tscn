@@ -28,6 +28,9 @@ viewport_path = NodePath("ViewportXLabel")
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+strength_move = 4.0
+zoom_min = 0.01
+zoom_max = 20.0
 
 [node name="ViewportXLabel" type="Viewport" parent="."]
 usage = 0
@@ -56,94 +59,99 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 488.0
+margin_right = 1366.0
+margin_bottom = 606.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ContainerYLabel" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 100.0
-margin_bottom = 488.0
-rect_min_size = Vector2( 100, 0 )
+margin_right = 150.0
+margin_bottom = 606.0
+rect_min_size = Vector2( 150, 0 )
 rect_clip_content = true
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/ContainerYLabel"]
-margin_right = 100.0
-margin_bottom = 488.0
+margin_right = 150.0
+margin_bottom = 606.0
 texture = SubResource( 3 )
 expand = true
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-margin_left = 104.0
-margin_right = 108.0
-margin_bottom = 488.0
+margin_left = 154.0
+margin_right = 158.0
+margin_bottom = 606.0
 custom_styles/separator = SubResource( 1 )
 
 [node name="ContainerChart" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 112.0
-margin_right = 1024.0
-margin_bottom = 488.0
+margin_left = 162.0
+margin_right = 1366.0
+margin_bottom = 606.0
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/ContainerChart"]
-margin_right = 912.0
-margin_bottom = 488.0
+margin_right = 1204.0
+margin_bottom = 606.0
 texture = SubResource( 2 )
 expand = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-margin_top = 492.0
-margin_right = 1024.0
-margin_bottom = 496.0
+margin_top = 610.0
+margin_right = 1366.0
+margin_bottom = 614.0
 custom_styles/separator = SubResource( 1 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 500.0
-margin_right = 1024.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 0, 100 )
+margin_top = 618.0
+margin_right = 1366.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 0, 150 )
 size_flags_horizontal = 3
 
 [node name="ContainerLineTitle" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 0 )
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 0 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer2/ContainerLineTitle"]
-margin_right = 100.0
-margin_bottom = 100.0
+margin_right = 150.0
+margin_bottom = 150.0
 
 [node name="ListLineTitle" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ContainerLineTitle/ScrollContainer"]
-margin_right = 100.0
-margin_bottom = 100.0
+margin_right = 150.0
+margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LineTitle" parent="VBoxContainer/HBoxContainer2/ContainerLineTitle/ScrollContainer/ListLineTitle" instance=ExtResource( 5 )]
+margin_right = 150.0
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 104.0
-margin_right = 108.0
-margin_bottom = 100.0
+margin_left = 154.0
+margin_right = 158.0
+margin_bottom = 150.0
 custom_styles/separator = SubResource( 1 )
 
 [node name="ContainerXLabel" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 112.0
-margin_right = 1024.0
-margin_bottom = 100.0
+margin_left = 162.0
+margin_right = 1366.0
+margin_bottom = 150.0
 rect_clip_content = true
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/ContainerXLabel"]
-margin_right = 912.0
-margin_bottom = 100.0
+margin_right = 1204.0
+margin_bottom = 150.0
 texture = SubResource( 4 )
 expand = true
 
 [node name="WindowViewData" parent="." instance=ExtResource( 6 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -201.0
+margin_right = 0.0
 
 [connection signal="resized" from="VBoxContainer/HBoxContainer/ContainerYLabel" to="." method="_on_ContainerYLabel_resized"]
 [connection signal="resized" from="VBoxContainer/HBoxContainer/ContainerChart" to="." method="_on_ContainerChart_resized"]

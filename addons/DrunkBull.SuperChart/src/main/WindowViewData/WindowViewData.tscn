@@ -25,7 +25,6 @@ size = 20
 font_data = ExtResource( 2 )
 
 [node name="WindowViewData" type="WindowDialog"]
-visible = true
 margin_right = 201.0
 margin_bottom = 117.0
 custom_colors/title_color = Color( 0, 0, 0, 1 )
