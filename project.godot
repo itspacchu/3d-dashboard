@@ -57,6 +57,8 @@ run/main_scene="res://Scenes/TestBed.tscn"
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://images/scrclogo.png"
+config/macos_native_icon="res://images/scrclogo.png"
+config/windows_native_icon="res://images/scrclogo.png"
 
 [display]
 
