@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://godwaita/gtk-colors.gd" type="Script" id=1]
+[ext_resource path="res://godwaita/theme.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/Fonts/firacode.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Prefabs/fontdesho.tres" type="Theme" id=4]
+[ext_resource path="res://Prefabs/handle_settings.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.54902 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 70.0
+margin_right = 12.0
+margin_bottom = 12.0
+
+[node name="RenderDistance" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 1366.0
+margin_bottom = 26.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/RenderDistance"]
+margin_top = 3.0
+margin_right = 150.0
+margin_bottom = 23.0
+theme = ExtResource( 4 )
+text = "Render Distance"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/RenderDistance"]
+margin_left = 154.0
+margin_right = 166.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 12, 0 )
+
+[node name="renderd" type="HSlider" parent="Panel/VBoxContainer/RenderDistance"]
+margin_left = 170.0
+margin_right = 470.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 300, 0 )
+min_value = 10.0
+max_value = 75.0
+value = 10.0
+tick_count = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/VBoxContainer"]
+margin_top = 30.0
+margin_right = 1366.0
+margin_bottom = 30.0
+
+[node name="AQ2" type="CheckButton" parent="Panel/VBoxContainer"]
+margin_top = 34.0
+margin_right = 123.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 123, 0 )
+size_flags_horizontal = 0
+theme = ExtResource( 4 )
+pressed = true
+text = "Shadows"
+flat = true
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="Panel/VBoxContainer"]
+margin_top = 64.0
+margin_right = 1366.0
+margin_bottom = 64.0
+
+[node name="ShadowDistance2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 68.0
+margin_right = 1366.0
+margin_bottom = 97.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ShadowDistance2"]
+margin_top = 4.0
+margin_right = 190.0
+margin_bottom = 24.0
+theme = ExtResource( 4 )
+text = "API Server Endpoint"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/ShadowDistance2"]
+margin_left = 194.0
+margin_right = 206.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 12, 0 )
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/ShadowDistance2"]
+margin_left = 210.0
+margin_right = 510.0
+margin_bottom = 29.966
+rect_min_size = Vector2( 300, 29.966 )
+text = "https://onem2m.iiit.prashantnook.in/"
+readonly = true
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="Panel/VBoxContainer"]
+margin_top = 101.0
+margin_right = 1366.0
+margin_bottom = 101.0
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 105.0
+margin_right = 1366.0
+margin_bottom = 138.0
+disabled = true
+text = "Start Automated Tour"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 142.0
+margin_right = 1366.0
+margin_bottom = 162.0
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 0.609375, 0.609375, 1 )
+text = "Node Settings :"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 62.0
+margin_top = 37.0
+margin_right = -57.0
+margin_bottom = 291.0
+
+[node name="AQ" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
+margin_right = 1247.0
+margin_bottom = 26.0
+disabled = true
+pressed = true
+text = "Air Quality "
+flat = true
+
+[node name="WF" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
+margin_top = 30.0
+margin_right = 1247.0
+margin_bottom = 56.0
+disabled = true
+pressed = true
+text = "Water Flow"
+flat = true
+
+[node name="WD" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
+margin_top = 60.0
+margin_right = 1247.0
+margin_bottom = 86.0
+disabled = true
+pressed = true
+text = "Water Distribution"
+flat = true
+
+[node name="SL" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
+margin_top = 90.0
+margin_right = 1247.0
+margin_bottom = 116.0
+disabled = true
+pressed = true
+text = "Wisun Nodes"
+flat = true
+
+[node name="SL2" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
+margin_top = 120.0
+margin_right = 1247.0
+margin_bottom = 146.0
+disabled = true
+pressed = true
+text = "Water Distribution"
+flat = true
+
+[node name="back" type="Button" parent="Panel"]
+margin_left = 12.0
+margin_top = 11.0
+margin_right = 92.0
+margin_bottom = 52.0
+text = "Back"
+
+[node name="reload" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -181.0
+margin_top = 11.0
+margin_right = -16.0
+margin_bottom = 52.0
+text = "Reload"
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 104.0
+margin_top = 13.0
+margin_right = 264.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "Settings"
+align = 1
+valign = 1
+
+[connection signal="value_changed" from="Panel/VBoxContainer/RenderDistance/renderd" to="Panel" method="_on_renderd_value_changed"]
+[connection signal="toggled" from="Panel/VBoxContainer/AQ2" to="Panel" method="_on_AQ2_toggled"]
+[connection signal="pressed" from="Panel/back" to="Panel" method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/reload" to="Panel" method="_on_reload_pressed"]

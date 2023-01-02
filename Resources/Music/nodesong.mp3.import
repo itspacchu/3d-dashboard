@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/nodesong.mp3-c06336d093ebe953f0bf6bc5d64ad9e4.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/nodesong.mp3"
+dest_files=[ "res://.import/nodesong.mp3-c06336d093ebe953f0bf6bc5d64ad9e4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
