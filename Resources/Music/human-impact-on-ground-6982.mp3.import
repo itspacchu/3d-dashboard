@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/human-impact-on-ground-6982.mp3-3ca3b1be0111dc0d8c17764e95d4398e.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/human-impact-on-ground-6982.mp3"
+dest_files=[ "res://.import/human-impact-on-ground-6982.mp3-3ca3b1be0111dc0d8c17764e95d4398e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

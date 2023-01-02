@@ -1,0 +1,42 @@
+[gd_resource type="Environment" load_steps=4 format=2]
+
+[sub_resource type="Gradient" id=120]
+colors = PoolColorArray( 0, 0.0493102, 0.0913086, 1, 1, 0.941574, 0.890625, 1 )
+
+[sub_resource type="GradientTexture2D" id=121]
+gradient = SubResource( 120 )
+
+[sub_resource type="ProceduralSky" id=119]
+radiance_size = 0
+sky_top_color = Color( 0.603922, 0.843137, 1, 1 )
+sky_horizon_color = Color( 1, 0.839216, 0.631373, 1 )
+sky_curve = 0.186346
+ground_bottom_color = Color( 0.603922, 0.843137, 1, 1 )
+ground_horizon_color = Color( 0.686555, 0.641177, 0.595798, 1 )
+ground_curve = 1.57586
+sun_latitude = 51.4286
+sun_energy = 1.86214
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 119 )
+ambient_light_energy = 0.7
+ambient_light_sky_contribution = 0.61
+fog_enabled = true
+fog_color = Color( 0.415686, 0.623529, 0.705882, 1 )
+fog_sun_color = Color( 1, 0.80168, 0.594958, 1 )
+fog_sun_amount = 0.11
+fog_depth_curve = 1.23115
+tonemap_mode = 1
+ssao_enabled = true
+ssao_light_affect = 1.0
+ssao_color = Color( 0, 0.00392157, 0.0784314, 1 )
+ssao_quality = 2
+ssao_edge_sharpness = 25.83
+dof_blur_far_quality = 2
+glow_enabled = true
+glow_intensity = 1.79
+glow_strength = 0.9
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_color_correction = SubResource( 121 )

@@ -1,0 +1,74 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[sub_resource type="VisualShaderNodeInput" id=1]
+input_name = "screen_texture"
+
+[sub_resource type="VisualShaderNodeTexture" id=2]
+source = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id=3]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorUniform" id=4]
+uniform_name = "screen_tint"
+default_value_enabled = true
+default_value = Color( 0.471466, 0.707843, 1, 1 )
+
+[sub_resource type="VisualShader" id=5]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible;
+
+uniform vec4 screen_tint : hint_color = vec4(0.471466, 0.707843, 1.000000, 1.000000);
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Input:3
+
+// Texture:4
+	vec3 n_out4p0;
+	float n_out4p1;
+	{
+		vec4 _tex_read = textureLod(SCREEN_TEXTURE, UV.xy, 0.0 );
+		n_out4p0 = _tex_read.rgb;
+		n_out4p1 = _tex_read.a;
+	}
+
+// ColorUniform:6
+	vec3 n_out6p0 = screen_tint.rgb;
+	float n_out6p1 = screen_tint.a;
+
+// VectorOp:5
+	vec3 n_out5p0 = n_out4p0 * n_out6p0;
+
+// Output:0
+	ALBEDO = n_out4p0;
+	EMISSION = n_out5p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -214.836, 79.4636 )
+nodes/fragment/0/position = Vector2( 1180, 180 )
+nodes/fragment/3/node = SubResource( 1 )
+nodes/fragment/3/position = Vector2( -320, 300 )
+nodes/fragment/4/node = SubResource( 2 )
+nodes/fragment/4/position = Vector2( 0, 240 )
+nodes/fragment/5/node = SubResource( 3 )
+nodes/fragment/5/position = Vector2( 860, 380 )
+nodes/fragment/6/node = SubResource( 4 )
+nodes/fragment/6/position = Vector2( 400, 460 )
+nodes/fragment/connections = PoolIntArray( 3, 0, 4, 2, 4, 0, 0, 0, 4, 0, 5, 0, 5, 0, 0, 5, 6, 0, 5, 1 )
+
+[resource]
+shader = SubResource( 5 )
+shader_param/screen_tint = Color( 0.439216, 0.686275, 1, 1 )

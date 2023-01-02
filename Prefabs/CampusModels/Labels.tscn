@@ -1,0 +1,136 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Fonts/firacode.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/labels_handler.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=74]
+size = 117
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="Labels" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Vindhya" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, 7.86701, 7.01039, -11.6063 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Vindhya"
+font = SubResource( 74 )
+
+[node name="Kohli" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, 11.6934, 6.51068, -3.55483 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Kohli"
+font = SubResource( 74 )
+
+[node name="Admin" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, 16.5126, 6.51068, -3.74359 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Admin"
+font = SubResource( 74 )
+
+[node name="THUB" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, -1.77093, 7.1718, -3.02746 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "T-HUB"
+font = SubResource( 74 )
+
+[node name="Kadamba" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, -26.7871, 7.52872, -2.4402 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Kadamba"
+font = SubResource( 74 )
+
+[node name="Guest" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, -15.0142, 6.42491, 12.1772 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Sahana Athidi 
+Nivas"
+font = SubResource( 74 )
+
+[node name="Palesh" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, -22.0177, 6.99243, 31.2496 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Palesh"
+font = SubResource( 74 )
+
+[node name="Palesh2" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, 19.5973, 9.25632, 26.1649 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Anand"
+font = SubResource( 74 )
+
+[node name="Palesh3" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, 12.9782, 9.25632, 19.8442 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Buddha"
+font = SubResource( 74 )
+
+[node name="Himalaya" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, 3.75914, 7.1718, -3.24406 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Himalaya"
+font = SubResource( 74 )
+
+[node name="Nilgiri" type="Label3D" parent="."]
+transform = Transform( -1.50287, 0, -0.0588643, 0, 1.50402, 0, 0.0588643, 0, -1.50287, -17.3461, 6.032, -16.1107 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Nilgiri"
+font = SubResource( 74 )
+
+[node name="Bakul" type="Label3D" parent="."]
+transform = Transform( -1.49885, 0, -0.058707, 0, 1.5, 0, 0.058707, 0, -1.49885, -28.745, 8.01748, -20.3967 )
+cast_shadow = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.2
+text = "Bakul"
+font = SubResource( 74 )
