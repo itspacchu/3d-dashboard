@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Models/lamp.tscn" type="PackedScene" id=1]
+
+[node name="Lamps" type="Spatial"]
+
+[node name="LAMP_NODE" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9861, 0.182425, -19.3362 )
+node_name = "WN-LP06-01"
+
+[node name="LAMP_NODE2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3424, 0.182425, -15.5839 )
+node_name = "WN-LP07-01"
+
+[node name="LAMP_NODE3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8183, 0.182425, -10.4348 )
+node_name = "WN-LP08-01"
+
+[node name="LAMP_NODE4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8977, 0.182425, -7.74883 )
+node_name = "WN-LP09-01"
+
+[node name="LAMP_NODE8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0932048, 0, 0.995647, 0, 1, 0, -0.995647, 0, 0.0932048, 14.3614, 0.169963, -7.13669 )
+node_name = "WN-LP02-02"
+
+[node name="LAMP_NODE9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0932048, 0, 0.995647, 0, 1, 0, -0.995647, 0, 0.0932048, 11.1534, 0.170532, -6.77633 )
+node_name = "WN-LP03-02"
+
+[node name="LAMP_NODE10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0932048, 0, 0.995647, 0, 1, 0, -0.995647, 0, 0.0932048, 6.40755, 0.174452, -6.57642 )
+node_name = "WN-LP04-02"
+
+[node name="LAMP_NODE11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0932048, 0, 0.995647, 0, 1, 0, -0.995647, 0, 0.0932048, 1.44097, 0.174452, -6.20965 )
+node_name = "WN-LP05-02"
+
+[node name="LAMP_NODE5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8587, 0.182425, -3.79165 )
+node_name = "WN-LP10-01"
+
+[node name="LAMP_NODE6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0158, 0.182425, -0.648551 )
+node_name = "WN-LP11-01"
+
+[node name="LAMP_NODE7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1835, 0.182425, 3.12228 )
+node_name = "WN-LP12-01"
+
+[node name="LAMP_NODE12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 18.4938, 0.182425, 4.00853 )
+node_name = "WN-LP12-01"
+
+[node name="LAMP_NODE13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 15.9458, 0.182425, 4.24855 )
+node_name = "WN-LP14-01"
+
+[node name="LAMP_NODE14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 13.5271, 0.182425, 4.47011 )
+node_name = "WN-LP15-01"
+
+[node name="LAMP_NODE15" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 10.1577, 0.182425, 4.8217 )
+node_name = "WN-LP16-01"
+
+[node name="LAMP_NODE16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 6.46598, 0.182425, 5.14399 )
+node_name = "WN-LP17-01"
+
+[node name="LAMP_NODE17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 3.38956, 0.182425, 5.34909 )
+node_name = "WN-LP18-01"
+
+[node name="LAMP_NODE18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, 0.166642, 0.182425, 5.70068 )
+node_name = "WN-LP19-01"
+
+[node name="LAMP_NODE19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0903718, 0, -0.995908, 0, 1, 0, 0.995908, 0, 0.0903718, -2.88048, 0.182425, 5.99367 )
+node_name = "WN-LP20-01"
