@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/boind.mp3-686cad9af09e3a6253e6316c6948d364.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/boind.mp3"
+dest_files=[ "res://.import/boind.mp3-686cad9af09e3a6253e6316c6948d364.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
