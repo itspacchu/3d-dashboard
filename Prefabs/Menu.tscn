@@ -814,7 +814,6 @@ theme = ExtResource( 28 )
 script = ExtResource( 27 )
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-self_modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -194.0

@@ -14,10 +14,12 @@ export var big_ol_list_of_motd = [
 	"Made on ArchLinux btw!",
 	"Wednesday Biryani",
 	"prashantnook.in",
+	"Hyderabad edition"
 ]
 
 func _ready():
-	$Label.text = big_ol_list_of_motd[rand_range(0,len(big_ol_list_of_motd))]
+	#$Label.text = big_ol_list_of_motd[rand_range(0,len(big_ol_list_of_motd))]
+	$Label.text = big_ol_list_of_motd[len(big_ol_list_of_motd)-1]
 
 func _process(delta):
 	rect_scale = Vector2.ONE * (scale_max * (sin(periodic*OS.get_ticks_msec()/100)+1)*0.5 + dc_scale)

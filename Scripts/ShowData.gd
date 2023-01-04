@@ -75,6 +75,7 @@ func _on_WindowDialog_popup_hide():
 func is_closeby():
 	return get_dst() < max_distance_thresh
 
+
 func get_dst():
 	return get_viewport().get_camera().global_translation.distance_squared_to(global_translation)
 
@@ -98,7 +99,9 @@ func _input(event):
 				logo.scale = Vector2.ONE*0.75
 				$Control/logo/dist.rect_scale = Vector2.ONE*1.25
 				logo.modulate.a = 0.8
+				get_viewport().get_camera().get_parent().get_parent().get_parent().is_on_node = 1
 		else:
+			get_viewport().get_camera().get_parent().get_parent().get_parent().is_on_node = 1
 			$Control/logo/dist.rect_scale = Vector2.ONE
 			$Control/logo/dist.visible = true and showable
 			logo.get_node("Label").visible = false and showable

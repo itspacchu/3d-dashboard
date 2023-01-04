@@ -129,6 +129,11 @@ settings={
 "deadzone": 0.5,
 "events": [  ]
 }
+joylookx={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
+}
 
 [physics]
 
@@ -140,11 +145,10 @@ common/enable_object_picking=false
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 quality/directional_shadow/size=2048
 quality/depth_prepass/disable_for_vendors="PowerVR,Mali,Adreno"
+quality/subsurface_scattering/quality=0
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
-quality/subsurface_scattering/quality=0
