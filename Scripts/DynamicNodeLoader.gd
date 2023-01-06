@@ -1,6 +1,5 @@
 extends Spatial
 export var Node_json_url = "https://gist.githubusercontent.com/itspacchu/3897cefdb2e3d54ac9004cf70adea884/raw/613a5418e41ceb3d5cdf1328512578db59888a9f/thedata.json"
-export var FILE_NAME = "thedata.json"
 var node_data = {}
 
 func _ready() -> void:
