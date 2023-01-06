@@ -8,13 +8,12 @@ gradient = SubResource( 120 )
 
 [sub_resource type="ProceduralSky" id=119]
 radiance_size = 0
-sky_top_color = Color( 0.2, 0.2, 0.2, 1 )
-sky_horizon_color = Color( 0.403922, 0.403922, 0.403922, 1 )
+sky_top_color = Color( 0.603922, 0.843137, 1, 1 )
+sky_horizon_color = Color( 1, 0.839216, 0.631373, 1 )
 sky_curve = 0.186346
 ground_bottom_color = Color( 0.603922, 0.843137, 1, 1 )
-ground_horizon_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+ground_horizon_color = Color( 0.686555, 0.641177, 0.595798, 1 )
 ground_curve = 1.57586
-sun_color = Color( 0.658824, 0.658824, 0.658824, 1 )
 sun_latitude = 51.4286
 sun_energy = 1.86214
 
@@ -24,8 +23,8 @@ background_sky = SubResource( 119 )
 ambient_light_energy = 0.7
 ambient_light_sky_contribution = 0.61
 fog_enabled = true
-fog_color = Color( 0.176471, 0.176471, 0.172549, 1 )
-fog_sun_color = Color( 0.403922, 0.682353, 0.878431, 1 )
+fog_color = Color( 0.415686, 0.623529, 0.705882, 1 )
+fog_sun_color = Color( 1, 0.80168, 0.594958, 1 )
 fog_sun_amount = 0.11
 fog_depth_curve = 1.23115
 tonemap_mode = 1
@@ -40,5 +39,4 @@ glow_intensity = 1.79
 glow_strength = 0.9
 adjustment_enabled = true
 adjustment_contrast = 1.2
-adjustment_saturation = 0.43
 adjustment_color_correction = SubResource( 121 )

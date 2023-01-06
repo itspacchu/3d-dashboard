@@ -53,7 +53,7 @@ _global_script_class_icons={
 config/name="3D Dashboard"
 config/description="iiit Smart city lab's 3D Street view
 https://gitlab.com/scrc-iiit/3d-dashboard"
-run/main_scene="res://Scenes/TestBed.tscn"
+run/main_scene="res://Prefabs/Menu.tscn"
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://images/scrclogo.png"
@@ -128,6 +128,11 @@ attack={
 settings={
 "deadzone": 0.5,
 "events": [  ]
+}
+joylookx={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
 }
 
 [physics]
