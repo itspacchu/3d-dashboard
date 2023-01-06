@@ -2,7 +2,7 @@ name: Compile for web
 on:
   push:
     branches:
-      - master
+      - main
       
 jobs:
   Export-to-web:
