@@ -1,10 +1,9 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Scripts/cameravibrator.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/menu_buttons.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/daynight.gd" type="Script" id=3]
 [ext_resource path="res://Resources/GrassVegitationShader.gdshader" type="Shader" id=4]
-[ext_resource path="res://Prefabs/cars.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Models/vegitationshader.tres" type="Material" id=6]
 [ext_resource path="res://Models/Vegi/Bark.material" type="Material" id=7]
 [ext_resource path="res://Prefabs/version.tscn" type="PackedScene" id=8]
@@ -556,7 +555,6 @@ ssao_light_affect = 1.0
 ssao_color = Color( 0, 0.00392157, 0.0784314, 1 )
 ssao_quality = 2
 ssao_edge_sharpness = 25.83
-dof_blur_far_enabled = true
 dof_blur_far_distance = 8.36
 dof_blur_far_transition = 8.56
 dof_blur_far_amount = 0.23
@@ -718,8 +716,6 @@ mesh = SubResource( 86 )
 skeleton = NodePath("../../../wall")
 
 [node name="ExternalColliders" type="Spatial" parent="Navigation/NavigationMeshInstance"]
-
-[node name="cars" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4758 )
