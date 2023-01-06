@@ -6,7 +6,7 @@ on:
       
 jobs:
   Export-to-web:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: apt update && apt upgrade
 
