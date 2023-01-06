@@ -2,30 +2,52 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<< HEAD
 path.s3tc="res://.import/door.jpg-4ac109a3954d5ffb7a742cb99b97f6ae.s3tc.stex"
 path.etc="res://.import/door.jpg-4ac109a3954d5ffb7a742cb99b97f6ae.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
+=======
+path="res://.import/door.jpg-4ac109a3954d5ffb7a742cb99b97f6ae.stex"
+metadata={
+"vram_texture": false
+>>>>>>> 38dba1a790695b4c96ecf356f873cc617584c28d
 }
 
 [deps]
 
 source_file="res://images/door.jpg"
+<<<<<<< HEAD
 dest_files=[ "res://.import/door.jpg-4ac109a3954d5ffb7a742cb99b97f6ae.s3tc.stex", "res://.import/door.jpg-4ac109a3954d5ffb7a742cb99b97f6ae.etc.stex" ]
 
 [params]
 
 compress/mode=2
+=======
+dest_files=[ "res://.import/door.jpg-4ac109a3954d5ffb7a742cb99b97f6ae.stex" ]
+
+[params]
+
+compress/mode=0
+>>>>>>> 38dba1a790695b4c96ecf356f873cc617584c28d
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
+<<<<<<< HEAD
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
+=======
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+>>>>>>> 38dba1a790695b4c96ecf356f873cc617584c28d
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
@@ -33,5 +55,9 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
+<<<<<<< HEAD
 detect_3d=false
+=======
+detect_3d=true
+>>>>>>> 38dba1a790695b4c96ecf356f873cc617584c28d
 svg/scale=1.0
