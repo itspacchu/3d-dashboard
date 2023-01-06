@@ -8,8 +8,6 @@ jobs:
   Export-to-web:
     runs-on: self-hosted
     steps:
-      - run: apt update && apt upgrade
-
       - name: install godot
         run: wget https://downloads.tuxfamily.org/godotengine/3.5.1/Godot_v3.5.1-stable_linux_headless.64.zip \
             && unzip Godot_v3.5.1-stable_linux_headless.64.zip \
