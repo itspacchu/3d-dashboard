@@ -8,19 +8,6 @@ jobs:
   Export-to-web:
     runs-on: self-hosted
     steps:
-    #   - name: install godot
-    #     run: wget https://downloads.tuxfamily.org/godotengine/3.5.1/Godot_v3.5.1-stable_linux_headless.64.zip \
-    #         && unzip Godot_v3.5.1-stable_linux_headless.64.zip \
-    #         && mv Godot_v3.5.1-stable_linux_headless.64 /usr/bin/godot \
-    #         && rm Godot_v3.5.1-stable_linux_headless.64.zip
-      
-    #   - name: install godot export templates
-    #     run: wget https://downloads.tuxfamily.org/godotengine/3.5.1/Godot_v3.5.1-stable_export_templates.tpz \
-    #         && unzip Godot_v3.5.1-stable_export_templates.tpz \
-    #         && mkdir -p /root/.local/share/godot/templates/ \
-    #         && cp -r templates/* /root/.local/share/godot/templates/3.5.1.stable/ \
-    #         && rm Godot_v3.5.1-stable_export_templates.tpz
-    #         && rm -rf templates/
       - name: Check out repository code
         uses: actions/checkout@v3
 
