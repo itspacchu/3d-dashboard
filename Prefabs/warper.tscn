@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Resources/Music/jumppad.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Prefabs/warper_mat.tres" type="Material" id=2]
 [ext_resource path="res://Scripts/warper.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Fonts/firacode.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="CylinderShape" id=13]
 height = 0.741073
@@ -22,6 +23,12 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 28
 }
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 4 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -45,5 +52,11 @@ skeleton = NodePath("")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 1 )
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.975119, 0 )
+billboard = 1
+text = "UwU"
+font = SubResource( 15 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

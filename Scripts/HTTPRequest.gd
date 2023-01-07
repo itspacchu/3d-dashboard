@@ -5,9 +5,7 @@ func gen_link(base,nv,nn,type='?rcn=4'):
 	print("GET " + link)
 	return link
 
-func get_data(node_v,node_n,type_da='la'):
-	var onem2mbase = "https://onem2m.iiit.prashantnook.in/~/in-cse/in-name/"
-	
+func get_data(node_v,node_n,type_da='la',onem2mbase="https://onem2m.iiit.prashantnook.in/~/in-cse/in-name/"):
 	var headers = [
 		'X-M2M-Origin: guest:guest',
 		'Accept: application/json',
