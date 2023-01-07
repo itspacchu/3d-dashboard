@@ -39,7 +39,7 @@ operator = 2
 
 [sub_resource type="VisualShader" id=18]
 code = "shader_type spatial;
-render_mode blend_add, depth_draw_alpha_prepass, cull_disabled, diffuse_toon, specular_disabled, async_visible, shadows_disabled, ambient_light_disabled;
+render_mode blend_add, cull_disabled, diffuse_toon, specular_disabled, async_visible, shadows_disabled, ambient_light_disabled;
 
 uniform vec4 ColorUniform : hint_color = vec4(1.000000, 0.466575, 0.950243, 1.000000);
 
@@ -107,10 +107,9 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 484.334, -89.4548 )
+graph_offset = Vector2( -639.11, -159.998 )
 modes/blend = 1
 modes/cull = 2
-modes/depth_draw = 3
 modes/diffuse = 4
 modes/specular = 4
 flags/ambient_light_disabled = true
