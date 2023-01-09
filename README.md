@@ -16,6 +16,10 @@ This is a re-implementation of SCRC Lab's 3D Dashboard in Godot Engine.
 
 ![image](https://user-images.githubusercontent.com/37984032/209671877-c3c109d3-fe00-42ed-a0cd-fa09aa324a9d.png)
 
+---
+
+![image](https://user-images.githubusercontent.com/37984032/211289482-6de5a189-1b6c-441d-bbed-6e2c969fbf68.png)
+
 ![beauty](https://media.discordapp.net/attachments/852930321493655563/1053914977934782555/image.png)
 
 ![nodes](https://media.discordapp.net/attachments/852930321493655563/1053914383341850694/image.png?width=1253&height=701)
