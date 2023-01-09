@@ -27,11 +27,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 12.0
 margin_top = 70.0
-margin_right = 12.0
+margin_right = -18.0
 margin_bottom = 12.0
 
 [node name="RenderDistance" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_right = 1366.0
+margin_right = 1336.0
 margin_bottom = 26.0
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/RenderDistance"]
@@ -57,69 +57,120 @@ max_value = 75.0
 value = 10.0
 tick_count = 10
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Panel/VBoxContainer"]
+[node name="DayTimeModifier" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_top = 30.0
-margin_right = 1366.0
-margin_bottom = 30.0
+margin_right = 1336.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/DayTimeModifier"]
+margin_top = 3.0
+margin_right = 150.0
+margin_bottom = 23.0
+theme = ExtResource( 4 )
+text = "Day/Night      "
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/DayTimeModifier"]
+margin_left = 154.0
+margin_right = 166.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 12, 0 )
+
+[node name="CheckButton" type="CheckButton" parent="Panel/VBoxContainer/DayTimeModifier"]
+margin_left = 170.0
+margin_right = 218.0
+margin_bottom = 26.0
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/VBoxContainer"]
+margin_top = 60.0
+margin_right = 1336.0
+margin_bottom = 60.0
 
 [node name="AQ2" type="CheckButton" parent="Panel/VBoxContainer"]
-margin_top = 34.0
-margin_right = 123.0
-margin_bottom = 60.0
+margin_top = 64.0
+margin_right = 222.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 123, 0 )
 size_flags_horizontal = 0
 theme = ExtResource( 4 )
 pressed = true
-text = "Shadows"
+text = "Shadows          "
 flat = true
 
 [node name="VSplitContainer2" type="VSplitContainer" parent="Panel/VBoxContainer"]
-margin_top = 64.0
-margin_right = 1366.0
-margin_bottom = 64.0
+margin_top = 94.0
+margin_right = 1336.0
+margin_bottom = 94.0
 
-[node name="ShadowDistance2" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 68.0
-margin_right = 1366.0
-margin_bottom = 97.0
+[node name="OneM2MEnd" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 98.0
+margin_right = 1336.0
+margin_bottom = 131.0
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/ShadowDistance2"]
-margin_top = 4.0
+[node name="Label" type="Label" parent="Panel/VBoxContainer/OneM2MEnd"]
+margin_top = 6.0
 margin_right = 190.0
-margin_bottom = 24.0
+margin_bottom = 26.0
 theme = ExtResource( 4 )
 text = "API Server Endpoint"
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/ShadowDistance2"]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/OneM2MEnd"]
 margin_left = 194.0
 margin_right = 206.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 12, 0 )
 
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/ShadowDistance2"]
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/OneM2MEnd"]
 margin_left = 210.0
-margin_right = 510.0
-margin_bottom = 29.966
-rect_min_size = Vector2( 300, 29.966 )
-text = "https://onem2m.iiit.prashantnook.in/"
-readonly = true
+margin_right = 1336.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+text = "https://onem2m.iiit.prashantnook.in"
+editable = false
+placeholder_text = "https://onem2m.iiit.prashantnook.in"
+
+[node name="NodeJSON" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 135.0
+margin_right = 1336.0
+margin_bottom = 168.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/NodeJSON"]
+margin_top = 6.0
+margin_right = 190.0
+margin_bottom = 26.0
+theme = ExtResource( 4 )
+text = "Node Data Server   "
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/NodeJSON"]
+margin_left = 194.0
+margin_right = 206.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 12, 0 )
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/NodeJSON"]
+margin_left = 210.0
+margin_right = 1336.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+text = "https://gist.githubusercontent.com/itspacchu/3897cefdb2e3d54ac9004cf70adea884/raw/613a5418e41ceb3d5cdf1328512578db59888a9f/thedata.json"
+placeholder_text = "https://gist.githubusercontent.com/itspacchu/3897cefdb2e3d54ac9004cf70adea884/raw/613a5418e41ceb3d5cdf1328512578db59888a9f/thedata.json"
+placeholder_alpha = 0.508
 
 [node name="VSplitContainer3" type="VSplitContainer" parent="Panel/VBoxContainer"]
-margin_top = 101.0
-margin_right = 1366.0
-margin_bottom = 101.0
+margin_top = 172.0
+margin_right = 1336.0
+margin_bottom = 172.0
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 105.0
-margin_right = 1366.0
-margin_bottom = 138.0
+margin_top = 176.0
+margin_right = 1336.0
+margin_bottom = 209.0
 disabled = true
 text = "Start Automated Tour"
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
-margin_top = 142.0
-margin_right = 1366.0
-margin_bottom = 162.0
+margin_top = 213.0
+margin_right = 1336.0
+margin_bottom = 233.0
 theme = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 0.609375, 0.609375, 1 )
 text = "Node Settings :"
@@ -133,7 +184,7 @@ margin_right = -57.0
 margin_bottom = 291.0
 
 [node name="AQ" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
-margin_right = 1247.0
+margin_right = 1217.0
 margin_bottom = 26.0
 disabled = true
 pressed = true
@@ -142,7 +193,7 @@ flat = true
 
 [node name="WF" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
 margin_top = 30.0
-margin_right = 1247.0
+margin_right = 1217.0
 margin_bottom = 56.0
 disabled = true
 pressed = true
@@ -151,7 +202,7 @@ flat = true
 
 [node name="WD" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
 margin_top = 60.0
-margin_right = 1247.0
+margin_right = 1217.0
 margin_bottom = 86.0
 disabled = true
 pressed = true
@@ -160,7 +211,7 @@ flat = true
 
 [node name="SL" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
 margin_top = 90.0
-margin_right = 1247.0
+margin_right = 1217.0
 margin_bottom = 116.0
 disabled = true
 pressed = true
@@ -169,7 +220,7 @@ flat = true
 
 [node name="SL2" type="CheckButton" parent="Panel/VBoxContainer/Label/VBoxContainer"]
 margin_top = 120.0
-margin_right = 1247.0
+margin_right = 1217.0
 margin_bottom = 146.0
 disabled = true
 pressed = true
@@ -203,6 +254,9 @@ align = 1
 valign = 1
 
 [connection signal="value_changed" from="Panel/VBoxContainer/RenderDistance/renderd" to="Panel" method="_on_renderd_value_changed"]
+[connection signal="toggled" from="Panel/VBoxContainer/DayTimeModifier/CheckButton" to="Panel" method="_on_CheckButton_toggled"]
 [connection signal="toggled" from="Panel/VBoxContainer/AQ2" to="Panel" method="_on_AQ2_toggled"]
+[connection signal="text_changed" from="Panel/VBoxContainer/NodeJSON/LineEdit" to="Panel" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Panel/VBoxContainer/NodeJSON/LineEdit" to="Panel" method="_on_LineEdit_text_entered"]
 [connection signal="pressed" from="Panel/back" to="Panel" method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/reload" to="Panel" method="_on_reload_pressed"]

@@ -28,3 +28,19 @@ func _on_renderd_value_changed(value):
 
 func _on_reload_pressed():
 	get_tree().change_scene_to(load("res://Scenes/TestBed.tscn"))
+
+
+func _on_CheckButton_toggled(button_pressed: bool) -> void:
+	var animplayer:AnimationPlayer = get_parent().get_parent().get_node("WorldEnvironment/AnimationPlayer")
+	if(button_pressed):
+		animplayer.play("dn")
+		animplayer.seek(1)
+	else:
+		animplayer.play("RESET")
+		animplayer.seek(0)
+
+func _on_LineEdit_text_entered(new_text: String) -> void:
+	get_parent().get_parent().get_node("DynamicNodeLoader").queue_free()
+	var node_loader = load('res://Prefabs/DynamicNodeLoader.tscn').instance()
+	node_loader.Node_json_url = new_text
+	get_parent().get_parent().add_child(node_loader)
