@@ -1,2 +1,8 @@
+# Exported builds
 Exports/*
+
+#Demo projects examples
 Demo/*
+
+# import cache
+.import/*
