@@ -28,5 +28,4 @@ COPY . .
 
 # compile for HTML5
 RUN mkdir -p /godotapp/Exports/web/
-RUN godot --path /godotapp --export HTML5
-RUN ls /godotapp/Exports/web/
+#RUN godot --path /godotapp --export HTML5
