@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  gracie-builder:
+    image: registry.gitlab.com/scrc-iiit/3d-dashboard/gracie
+    command: godot --path /godotapp --export HTML5
+    volumes:
+      - /vol/gracie:/godotapp/Exports/web/
+    environment:
+      - GODOT_VERSION="3.5.1"
