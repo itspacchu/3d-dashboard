@@ -3,7 +3,7 @@ FROM ubuntu:latest
 LABEL maintainer="prashantn@riseup.net"
 LABEL description="Godot build system"
 
-ARG GODOT_VERSION
+ARG GODOT_VERSION="3.5.1"
 ENV GODOT_VERSION=${GODOT_VERSION}
 
 # install updates
