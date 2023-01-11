@@ -3,12 +3,18 @@ FROM ubuntu:latest
 LABEL maintainer="prashantn@riseup.net"
 LABEL description="Godot build system"
 
-ARG GODOT_VERSION
+ARG GODOT_VERSION="3.5.1"
 ENV GODOT_VERSION=${GODOT_VERSION}
+
+ARG GODOT_EXPORT_TYPE="HTML5"
+ENV GODOT_EXPORT_TYPE=${GODOT_EXPORT_TYPE}
+
+ARG GIT_REPO_URL="https://github.com/itspacchu/3d-dashboard"
+ENV GIT_REPO_URL=${GIT_REPO_URL}
 
 # install updates
 RUN apt update
-RUN apt install -y wget unzip 
+RUN apt install -y wget unzip git
 
 # install godot
 RUN wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip && \
@@ -24,8 +30,9 @@ RUN wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${G
     rm -rf ./templates Godot_v${GODOT_VERSION}-stable_export_templates.tpz
 
 WORKDIR /godotapp
-COPY . .
+#COPY . .
+RUN git clone ${GIT_REPO_URL} ./
 
-# compile for HTML5
+# compile for ${GODOT_EXPORT_TYPE}
 RUN mkdir -p /godotapp/Exports/web/
-#RUN godot --path /godotapp --export HTML5
+RUN godot --path /godotapp --export ${GODOT_EXPORT_TYPE}

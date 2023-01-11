@@ -133,9 +133,9 @@ func _physics_process(delta):
 		if (Input.is_action_pressed("sprint")) and (is_walking == true): 
 			movement_speed = run_speed
 			is_running = true
-			$TPOSE.playback_speed = run_speed/2
+			$newchar/AnimationPlayer.playback_speed = run_speed/2
 		else: # Walk State and speed
-			$TPOSE.playback_speed = walk_speed/2
+			$newchar/AnimationPlayer.playback_speed = walk_speed/2
 			movement_speed = walk_speed
 			is_running = false
 	else: 
