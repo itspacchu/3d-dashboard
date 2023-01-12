@@ -30,8 +30,8 @@ RUN wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${G
     rm -rf ./templates Godot_v${GODOT_VERSION}-stable_export_templates.tpz
 
 WORKDIR /godotapp
-#COPY . .
-RUN git clone ${GIT_REPO_URL} ./
+COPY . .
+#RUN git clone ${GIT_REPO_URL} ./
 
 # compile for ${GODOT_EXPORT_TYPE}
 RUN mkdir -p /godotapp/Exports/web/
