@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/songcover.mp3-c3040db9a282d43e0727a5a61191428b.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/songcover.mp3"
+dest_files=[ "res://.import/songcover.mp3-c3040db9a282d43e0727a5a61191428b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

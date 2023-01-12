@@ -62,7 +62,7 @@ void vertex() {
 	vec3 n_out5p0 = n_out12p0 + n_out3p0;
 
 // Output:0
-	VERTEX = n_out5p0;
+	VERTEX = n_out5p0 - vec3(0,0.1,0);
 
 }
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/freesound_garage.mp3-31a9de56c3716feaa0e04fe13eeca09c.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/freesound_garage.mp3"
+dest_files=[ "res://.import/freesound_garage.mp3-31a9de56c3716feaa0e04fe13eeca09c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

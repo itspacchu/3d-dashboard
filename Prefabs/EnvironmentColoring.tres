@@ -5,6 +5,8 @@ colors = PoolColorArray( 0, 0.0493102, 0.0913086, 1, 1, 0.941574, 0.890625, 1 )
 
 [sub_resource type="GradientTexture2D" id=121]
 gradient = SubResource( 120 )
+width = 12
+height = 12
 
 [sub_resource type="ProceduralSky" id=119]
 radiance_size = 0
@@ -20,6 +22,7 @@ sun_energy = 1.86214
 [resource]
 background_mode = 2
 background_sky = SubResource( 119 )
+ambient_light_color = Color( 0, 0.145098, 0.2, 1 )
 ambient_light_energy = 0.7
 ambient_light_sky_contribution = 0.61
 fog_enabled = true
@@ -38,5 +41,5 @@ glow_enabled = true
 glow_intensity = 1.79
 glow_strength = 0.9
 adjustment_enabled = true
-adjustment_contrast = 1.2
+adjustment_contrast = 1.25
 adjustment_color_correction = SubResource( 121 )

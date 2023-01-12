@@ -113,14 +113,10 @@ func _physics_process(delta):
 		is_rolling = false
 	
 #	Jump input and Mechanics
-	if Input.is_action_just_pressed("ui_accept") and ((is_attacking != true) and (is_rolling != true)) and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and ((is_dancing != true) and (is_attacking != true) and (is_rolling != true)) and is_on_floor():
 		vertical_velocity = Vector3.UP * jump_force
 	if(Input.is_action_just_pressed("ui_page_down")):
 		is_dancing = !is_dancing
-		if(is_dancing):
-			playback.travel(dance_shit)
-		else:
-			playback.travel(idle_node_name)
 	# Movement input, state and mechanics. *Note: movement stops if attacking
 	if (Input.is_action_pressed("ui_up") ||  Input.is_action_pressed("ui_down") ||  Input.is_action_pressed("ui_left") ||  Input.is_action_pressed("ui_right")):
 		direction = Vector3(Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right"),
@@ -155,10 +151,11 @@ func _physics_process(delta):
 		horizontal_velocity = horizontal_velocity.linear_interpolate(direction.normalized() * movement_speed, acceleration * delta)
 	
 	# The Physics Sauce. Movement, gravity and velocity in a perfect dance.
-	movement.z = horizontal_velocity.z + vertical_velocity.z
-	movement.x = horizontal_velocity.x + vertical_velocity.x
-	movement.y = vertical_velocity.y
-	move_and_slide(movement, Vector3.UP)
+	if(is_dancing!=true):
+		movement.z = horizontal_velocity.z + vertical_velocity.z
+		movement.x = horizontal_velocity.x + vertical_velocity.x
+		movement.y = vertical_velocity.y
+		move_and_slide(movement, Vector3.UP)
 
 	# ========= State machine controls =========
 	# The booleans of the on_floor, is_walking etc, trigger the 
@@ -172,6 +169,12 @@ func _physics_process(delta):
 	animation_tree["parameters/conditions/IsNotWalking"] = !is_walking
 	animation_tree["parameters/conditions/IsRunning"] = is_running
 	animation_tree["parameters/conditions/IsNotRunning"] = !is_running
+	animation_tree["parameters/conditions/IsDancing"] = is_dancing
+	animation_tree["parameters/conditions/IsNotDancing"] = !is_dancing
+	
+	animation_tree["parameters/conditions/IsRunningOnGround"] = on_floor and is_running
+	animation_tree["parameters/conditions/IsWalkingOnGround"] = on_floor and is_walking
+	
 	# Attacks and roll don't use these boolean conditions, instead
 	# they use "travel" or "start" to one-shot their animations.
 	old_onfloor = on_floor

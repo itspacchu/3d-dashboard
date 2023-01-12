@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Offenbach - Can Can Music.mp3-14a6fd1422c306163d14366962814e2a.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Offenbach - Can Can Music.mp3"
+dest_files=[ "res://.import/Offenbach - Can Can Music.mp3-14a6fd1422c306163d14366962814e2a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

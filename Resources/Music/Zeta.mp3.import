@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Zeta.mp3-c077ea3d17a59827c81139b7a5f5906d.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Zeta.mp3"
+dest_files=[ "res://.import/Zeta.mp3-c077ea3d17a59827c81139b7a5f5906d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

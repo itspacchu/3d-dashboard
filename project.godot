@@ -149,10 +149,16 @@ common/enable_object_picking=false
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-quality/directional_shadow/size=2048
+quality/directional_shadow/size=1024
+quality/shadow_atlas/quadrant_1_subdiv=1
+quality/shadow_atlas/quadrant_2_subdiv=2
+quality/shadow_atlas/quadrant_3_subdiv=3
 quality/depth_prepass/disable_for_vendors="PowerVR,Mali,Adreno"
-quality/subsurface_scattering/quality=0
+quality/filters/anisotropic_filter_level=1
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
+quality/subsurface_scattering/quality=0

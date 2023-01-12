@@ -107,7 +107,6 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -153.675, -254.249 )
 modes/blend = 1
 modes/cull = 2
 modes/depth_draw = 2

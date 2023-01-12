@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/76286__lg__library-and-drumband-090724.wav-007f6457d783b658c46e702ffdfd78cb.sample"
+
+[deps]
+
+source_file="res://Resources/Music/76286__lg__library-and-drumband-090724.wav"
+dest_files=[ "res://.import/76286__lg__library-and-drumband-090724.wav-007f6457d783b658c46e702ffdfd78cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

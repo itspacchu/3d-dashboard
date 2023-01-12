@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/freesound_kitchen_ambience.mp3-a710901e0b70a0365c2b8a31f659b4e3.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/freesound_kitchen_ambience.mp3"
+dest_files=[ "res://.import/freesound_kitchen_ambience.mp3-a710901e0b70a0365c2b8a31f659b4e3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

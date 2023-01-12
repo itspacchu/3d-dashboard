@@ -23,6 +23,7 @@ export var big_ol_list_of_motd = [
 ]
 
 func _ready():
+	randomize()
 	$Label.text = big_ol_list_of_motd[rand_range(0,len(big_ol_list_of_motd))]
 	#$Label.text = big_ol_list_of_motd[len(big_ol_list_of_motd)-1]
 

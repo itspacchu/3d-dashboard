@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/freesound_elevator_96khz.mp3-66d6d1abae58823b305e621d29a5af8b.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/freesound_elevator_96khz.mp3"
+dest_files=[ "res://.import/freesound_elevator_96khz.mp3-66d6d1abae58823b305e621d29a5af8b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
