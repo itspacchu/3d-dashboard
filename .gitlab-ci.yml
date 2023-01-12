@@ -1,0 +1,59 @@
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+# stages:
+# - test
+# sast:
+#   stage: test
+# include:
+# - template: Security/SAST.gitlab-ci.yml
+
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml
+
+# Build a Docker image with CI/CD and push to the GitLab registry.
+# Docker-in-Docker documentation: https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
+#
+# This template uses one generic job with conditional builds
+# for the default branch and all other (MR) branches.
+
+.template: &build_template
+  image: docker:stable
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  # Default branch leaves tag empty (= latest tag)
+  # All other branches are tagged with the escaped branch name (commit ref slug)
+  script:
+    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:latest || true
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag="production"
+        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = $tag"
+      elif [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag="development"
+        echo "Running on development branch: tag = $tag"
+      else
+        tag=":$CI_COMMIT_REF_SLUG"
+        echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
+      fi
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/$IMAGE_NAME${tag}" --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:latest $DOCKERFILE_PATH 
+    - docker push "$CI_REGISTRY_IMAGE/$IMAGE_NAME${tag}"
+    - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:latest
+  # Run this job in a branch where a Dockerfile exists
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == "development"
+    - exists:
+        - Dockerfile
+
+build:gracie:
+  <<: *build_template
+  variables:
+    IMAGE_NAME: gracie
+    DOCKERFILE_PATH: .
