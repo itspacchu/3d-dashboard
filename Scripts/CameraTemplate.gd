@@ -15,6 +15,7 @@ var h_acceleration = 10
 var v_acceleration = 10
 var joyview = Vector2()
 var is_on_node = 1
+var controller_vector = Vector2.ZERO
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -27,13 +28,14 @@ func _input(event):
 		camrot_h += -event.relative.x * h_sensitivity * is_on_node
 		camrot_v += event.relative.y * v_sensitivity * is_on_node
 	if event is InputEventJoypadMotion:
-		$control_stay_delay.start()
-		camrot_h += -event.get_action_strength() * h_sensitivity * is_on_node
-		camrot_v += event.y * v_sensitivity * is_on_node
+		controller_vector.x = (Input.get_axis("joylookxp", "joylookxn")) * h_sensitivity * is_on_node * 10
+		controller_vector.y = (Input.get_axis("joylookyp", "joylookyn")) * v_sensitivity * is_on_node *10
 
 		
 		
 func _physics_process(delta):
+	camrot_h += controller_vector.x
+	camrot_v += controller_vector.y
 	camrot_v = clamp(camrot_v, cam_v_min, cam_v_max)
 	
 	var mesh_front = get_node(PlayerCharacterMesh).global_transform.basis.z

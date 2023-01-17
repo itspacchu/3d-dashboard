@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scripts/cameravibrator.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/menu_buttons.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Resources/Fonts/firacode.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://images/iiit_logo_white.d0f112be41ccfdd3bf92.png" type="Texture" id=11]
 [ext_resource path="res://images/touchgrass.tres" type="Texture" id=12]
+[ext_resource path="res://addons/controller_icons/assets/xbox360/x.png" type="Texture" id=13]
 [ext_resource path="res://Models/teleporter.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Models/gate2.material" type="Material" id=18]
 [ext_resource path="res://Models/Material_3.material" type="Material" id=19]
@@ -693,6 +694,47 @@ margin_bottom = 110.0
 theme = ExtResource( 26 )
 text = "Play"
 
+[node name="controller" type="TextureRect" parent="Control/Panel/Button"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0002
+margin_top = -19.4999
+margin_right = 112.0
+margin_bottom = 80.5001
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 13 )
+
+[node name="Control" type="Control" parent="Control/Panel"]
+anchor_left = 0.933
+anchor_top = 0.819
+anchor_right = 0.933
+anchor_bottom = 0.819
+margin_left = -0.907593
+margin_top = -1.40572
+margin_right = 2.09241
+margin_bottom = 1.59428
+script = ExtResource( 29 )
+scale_max = 0.1
+
+[node name="Label" type="Label" parent="Control/Panel/Control"]
+anchor_left = -2.997
+anchor_top = -0.224
+anchor_right = -2.997
+anchor_bottom = -0.224
+margin_left = -111.009
+margin_top = 52.672
+margin_right = 211.991
+margin_bottom = 87.672
+grow_horizontal = 2
+grow_vertical = 2
+rect_rotation = -29.2
+rect_scale = Vector2( 0.75, 0.75 )
+theme = ExtResource( 26 )
+custom_colors/font_color = Color( 1, 0.839216, 0.501961, 1 )
+text = "Now in Extra Colors"
+align = 1
+valign = 1
+
 [node name="TextureRect2" type="TextureRect" parent="Control"]
 anchor_left = 0.56369
 anchor_top = 0.158854
@@ -718,37 +760,6 @@ texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="Control" type="Control" parent="Control/TextureRect"]
-anchor_left = 1.988
-anchor_top = 0.783
-anchor_right = 1.988
-anchor_bottom = 0.783
-margin_left = 34.3767
-margin_top = 30.3079
-margin_right = 37.3767
-margin_bottom = 33.3079
-script = ExtResource( 29 )
-scale_max = 0.1
-
-[node name="Label" type="Label" parent="Control/TextureRect/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -349.94
-margin_top = 145.736
-margin_right = -159.94
-margin_bottom = 165.736
-grow_horizontal = 2
-grow_vertical = 2
-rect_rotation = -29.2
-rect_scale = Vector2( 4, 4 )
-theme = ExtResource( 26 )
-custom_colors/font_color = Color( 1, 0.839216, 0.501961, 1 )
-text = "Now in Extra Colors"
-align = 1
-valign = 1
 
 [node name="instruction" type="TextureRect" parent="Control"]
 visible = false

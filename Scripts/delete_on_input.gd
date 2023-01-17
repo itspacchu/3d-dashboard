@@ -1,5 +1,5 @@
 extends TextureRect
 
 func _input(event: InputEvent) -> void:
-	if(event is InputEventKey):
+	if(event is InputEvent):
 		queue_free()

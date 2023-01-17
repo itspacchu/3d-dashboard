@@ -83,6 +83,7 @@ var mouse_pos_in_chart := Vector2()
 
 var zoom := 1.0
 var pivot := Vector2()
+var controller_offet_save = Vector2.ZERO
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -100,6 +101,21 @@ func _input(event):
 			move_pivot(-strength_move * event.relative)
 			if _WindowViewData.visible:
 				_WindowViewData.rect_position = get_local_mouse_position()
+	if(Input.is_action_just_pressed('dd')):
+		move_pivot(Vector2.DOWN*10)
+		controller_offet_save += Vector2.DOWN*10
+	if(Input.is_action_just_pressed('du')):
+		move_pivot(Vector2.UP*10) 
+		controller_offet_save += Vector2.UP*10
+	if(Input.is_action_just_pressed('dr')):
+		move_pivot(Vector2.RIGHT*10)
+		controller_offet_save += Vector2.RIGHT*10
+	if(Input.is_action_just_pressed('dl')):
+		move_pivot(Vector2.LEFT*10)
+		controller_offet_save += Vector2.LEFT*10
+	if _WindowViewData.visible:
+		_WindowViewData.rect_position = controller_offet_save
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

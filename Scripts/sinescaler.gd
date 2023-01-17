@@ -19,7 +19,8 @@ export var big_ol_list_of_motd = [
 	"Wildest Dreams",
 	"Giggity Giggity",
 	"Lateraus ~ Tool",
-	"The Nights"
+	"The Nights",
+	"Vibration intensifies :>"
 ]
 
 func _ready():

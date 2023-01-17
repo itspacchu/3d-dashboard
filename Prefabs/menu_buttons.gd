@@ -1,5 +1,8 @@
 extends Spatial
 
+func _input(event: InputEvent) -> void:
+	if(Input.is_action_just_pressed('interact')):
+		_on_Button_button_down()
 
 func _on_Button_button_down():
 	$Control/instruction.visible = true

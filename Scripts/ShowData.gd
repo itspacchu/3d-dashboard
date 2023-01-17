@@ -29,6 +29,10 @@ var last_size = null
 var data = null;
 var labels = Array();
 var oneshot = true
+var controller_show = true
+var on_screen = false
+var currently_hovering = false
+
 
 static func rand_color(c=0):
 	var colcon = [
@@ -59,8 +63,21 @@ func _process(delta):
 	var pos = self.global_translation
 	var camera = get_viewport().get_camera()
 	var screenpos = camera.unproject_position(pos)
-	get_node('Control/logo').visible = not camera.is_position_behind(pos)
-	get_node('Control/logo').position = screenpos
+	on_screen = not camera.is_position_behind(pos)
+	get_node('Control/logo').visible = on_screen
+	if(on_screen):
+		get_node('Control/logo').position = screenpos
+		$Control/logo/dist.text = str(int(get_dst())) + " m"
+		var logo = get_node("Control/logo")
+		if(not currently_hovering):
+			if(is_closeby()):
+				logo.modulate.a = 0.75;
+				logo.self_modulate = Color.white
+				logo.scale = Vector2.ONE * 0.75
+			else:
+				logo.modulate.a = 0.1;
+				logo.self_modulate = Color.white
+				logo.scale = Vector2.ONE * 0.5
 
 func _on_WindowDialog_popup_hide():
 	var camera = get_viewport().get_camera()
@@ -80,40 +97,59 @@ func get_dst():
 	return get_viewport().get_camera().global_translation.distance_squared_to(global_translation)
 
 func _input(event):
-	$Control/logo/dist.text = str(int(get_dst())) + " m"
 	var logo = get_node("Control/logo")
-	if(event is InputEventMouseMotion):
-		if(logo.get_rect().has_point(logo.to_local(get_viewport().size/2))):
+	if(event is InputEventJoypadMotion or event is InputEventJoypadButton):
+		controller_show = true
+	else:
+		controller_show = false
+		
+	if(controller_show):
+		if(is_closeby()):
+			for i in range(0,2):
+				Input.start_joy_vibration(i, 0.5, 1, 1)
+		else:
+			for i in range(0,2):
+				Input.stop_joy_vibration(i)
+	
+	if(event is InputEventMouseMotion or event is InputEventJoypadMotion):
+		if(on_screen and logo.get_rect().has_point(logo.to_local(get_viewport().size/2))):
+			currently_hovering = true
 			if(is_closeby()):
 				$Control/logo/dist.visible = false and showable
 				logo.self_modulate = Color.white
 				logo.modulate.a = 1;
-				logo.scale = Vector2.ONE*1
+				logo.scale = Vector2.ONE*1.5
 				logo.get_node("Label").visible = true and showable
 				logo.get_node("Panel").visible = true and showable
+				$Control/logo/controller.visible = true and controller_show
 				if(oneshot == true):
 					do_request()
 					oneshot = false
 			else:
 				logo.self_modulate = Color.orangered
-				logo.scale = Vector2.ONE*0.75
+				logo.scale = Vector2.ONE*0.5
 				$Control/logo/dist.rect_scale = Vector2.ONE*1.25
-				logo.modulate.a = 0.8
+				logo.modulate.a = 0.2
 				get_viewport().get_camera().get_parent().get_parent().get_parent().is_on_node = 1
+			if(Input.is_action_just_pressed("settings")):
+				$Control/WindowDialog.visible = not $Control/WindowDialog.visible
 		else:
+			currently_hovering = false
 			get_viewport().get_camera().get_parent().get_parent().get_parent().is_on_node = 1
 			$Control/logo/dist.rect_scale = Vector2.ONE
 			$Control/logo/dist.visible = true and showable
+			$Control/logo/controller.visible = false and showable and controller_show
 			logo.get_node("Label").visible = false and showable
 			logo.get_node("Panel").visible = false and showable
-			logo.self_modulate = Color.white
-			logo.modulate.a = 0.2
-			logo.scale = Vector2.ONE * 0.6
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+			
+	if (Input.is_action_just_pressed('interact')) or (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 		if(is_closeby() and !is_window_open and data != null):
 			var camera = get_viewport().get_camera()
 			if(logo.get_rect().has_point(logo.to_local(get_viewport().size/2))):
 				onSpritePressed()
+
+	
+	
 	
 func onSpritePressed():
 	is_window_open = true
@@ -138,8 +174,10 @@ func onSpritePressed():
 	for i in len(lbl):
 		restructured_data.append(Array())
 	$Control/logo/Panel/VBoxContainer/nodata.visible = false and showable
+	
 	if(data == null):
 		$Control/logo/Panel/VBoxContainer/nodata.visible = true	and showable
+		$Control/logo/controller.visible = false and showable
 		$Control/err.popup_centered()
 		get_node('Control/err').window_title = "No Data Available"
 		get_node('Control/err/RichTextLabel').text = "No Data Available"
