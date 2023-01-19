@@ -28,4 +28,4 @@ texture = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20.572, 0 )
 cull_mask = 1025
 projection = 1
-size = 30.0
+size = 40.0
