@@ -187,10 +187,10 @@ func onSpritePressed():
 		var dp = strtolist(datapoints["con"]);
 		for val in len(labels):
 			if(val < 1):
-				var ts = OS.get_datetime_from_unix_time(int(dp[val]))
+				var ts = OS.get_datetime_from_unix_time(19800+int(dp[val]))
 				if(0 == int(dp[val])):
 					ts = OS.get_datetime()
-				timestamps.append("%02d:%02d , %d-%d"%[ts.hour,ts.minute,ts.day,ts.month])
+				timestamps.append("%02d:%02d|%02d-%02d"%[ts.hour,ts.minute,ts.day,ts.month])
 			else:
 				if('nan' in dp[val]):
 					if(val-1 > len(dp)):

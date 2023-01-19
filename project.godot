@@ -104,6 +104,7 @@ window/size/test_width=1280
 window/size/test_height=720
 mouse_cursor/custom_image="res://Resources/MousePointers/adwaita.svg"
 mouse_cursor/tooltip_position_offset=Vector2( 29, 29 )
+window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
 [editor_plugins]
@@ -241,16 +242,14 @@ dd={
 
 [physics]
 
-common/physics_fps=90
-common/physics_jitter_fix=0.7
 common/enable_object_picking=false
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+misc/lossless_compression/webp_compression_level=5
 quality/directional_shadow/size=1024
 quality/shadow_atlas/size=2048
 quality/shadow_atlas/quadrant_1_subdiv=1
@@ -258,7 +257,8 @@ quality/shadow_atlas/quadrant_2_subdiv=2
 quality/shadow_atlas/quadrant_3_subdiv=3
 quality/depth_prepass/disable_for_vendors="PowerVR,Mali,Adreno"
 quality/filters/anisotropic_filter_level=1
+limits/rendering/max_renderable_elements=1024
+quality/subsurface_scattering/quality=0
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
-quality/subsurface_scattering/quality=0
