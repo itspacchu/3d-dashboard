@@ -108,7 +108,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/scatter/plugin.cfg" )
 
 [gui]
 
