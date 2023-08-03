@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Barrier.png-81ffee99ccf28e27887a9eb591543df3.s3tc.stex"
-path.etc="res://.import/Barrier.png-81ffee99ccf28e27887a9eb591543df3.etc.stex"
+path="res://.import/Barrier.png-81ffee99ccf28e27887a9eb591543df3.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/Textures/Barrier.png"
-dest_files=[ "res://.import/Barrier.png-81ffee99ccf28e27887a9eb591543df3.s3tc.stex", "res://.import/Barrier.png-81ffee99ccf28e27887a9eb591543df3.etc.stex" ]
+dest_files=[ "res://.import/Barrier.png-81ffee99ccf28e27887a9eb591543df3.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

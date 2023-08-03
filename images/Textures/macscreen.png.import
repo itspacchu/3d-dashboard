@@ -3,21 +3,22 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.s3tc.stex"
+path.etc2="res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.etc2.stex"
 path.etc="res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Textures/macscreen.png"
-dest_files=[ "res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.s3tc.stex", "res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.etc.stex" ]
+dest_files=[ "res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.s3tc.stex", "res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.etc2.stex", "res://.import/macscreen.png-5a639556e3252263d60feac1f1bc7191.etc.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.85
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

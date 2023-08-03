@@ -3,16 +3,17 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.s3tc.stex"
+path.etc2="res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.etc2.stex"
 path.etc="res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/spritesheet/BIG IMPACT SMOKE.png"
-dest_files=[ "res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.s3tc.stex", "res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.etc.stex" ]
+dest_files=[ "res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.s3tc.stex", "res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.etc2.stex", "res://.import/BIG IMPACT SMOKE.png-3ac447ff5a497906fd11fe3fd9ed7ff4.etc.stex" ]
 
 [params]
 

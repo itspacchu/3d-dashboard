@@ -1,7 +1,7 @@
 [gd_resource type="Environment" load_steps=4 format=2]
 
 [sub_resource type="Gradient" id=120]
-colors = PoolColorArray( 0, 0.0493102, 0.0913086, 1, 1, 0.941574, 0.890625, 1 )
+colors = PoolColorArray( 0, 0.0715132, 0.0913086, 1, 1, 0.941574, 0.890625, 1 )
 
 [sub_resource type="GradientTexture2D" id=121]
 gradient = SubResource( 120 )
@@ -10,11 +10,11 @@ height = 12
 
 [sub_resource type="ProceduralSky" id=119]
 radiance_size = 0
-sky_top_color = Color( 0.603922, 0.843137, 1, 1 )
-sky_horizon_color = Color( 1, 0.839216, 0.631373, 1 )
+sky_top_color = Color( 0.529412, 0.701961, 1, 1 )
+sky_horizon_color = Color( 0.803922, 0.870588, 1, 1 )
 sky_curve = 0.186346
 ground_bottom_color = Color( 0.603922, 0.843137, 1, 1 )
-ground_horizon_color = Color( 0.686555, 0.641177, 0.595798, 1 )
+ground_horizon_color = Color( 0.803922, 0.870588, 1, 1 )
 ground_curve = 1.57586
 sun_latitude = 51.4286
 sun_energy = 1.86214
@@ -22,14 +22,14 @@ sun_energy = 1.86214
 [resource]
 background_mode = 2
 background_sky = SubResource( 119 )
-ambient_light_color = Color( 0, 0.145098, 0.2, 1 )
+ambient_light_color = Color( 1, 0.823529, 0.552941, 1 )
 ambient_light_energy = 0.7
 ambient_light_sky_contribution = 0.61
 fog_enabled = true
 fog_color = Color( 0.415686, 0.623529, 0.705882, 1 )
-fog_sun_color = Color( 1, 1, 1, 1 )
+fog_sun_color = Color( 1, 0.80168, 0.594958, 1 )
 fog_sun_amount = 0.11
-fog_depth_curve = 1.23115
+fog_depth_curve = 0.297303
 tonemap_mode = 1
 ssao_enabled = true
 ssao_light_affect = 1.0

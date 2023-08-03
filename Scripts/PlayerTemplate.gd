@@ -172,14 +172,12 @@ func _physics_process(delta):
 	animation_tree["parameters/conditions/IsDancing"] = is_dancing
 	animation_tree["parameters/conditions/IsNotDancing"] = !is_dancing
 	
-	animation_tree["parameters/conditions/IsRunningOnGround"] = on_floor and is_running
-	animation_tree["parameters/conditions/IsWalkingOnGround"] = on_floor and is_walking
+	#animation_tree["parameters/conditions/IsRunningOnGround"] = on_floor and is_running
+	#animation_tree["parameters/conditions/IsWalkingOnGround"] = on_floor and is_walking
 	
 	# Attacks and roll don't use these boolean conditions, instead
 	# they use "travel" or "start" to one-shot their animations.
 	old_onfloor = on_floor
-
-	
 
 
 func _on_AnimatedSprite3D_animation_finished():

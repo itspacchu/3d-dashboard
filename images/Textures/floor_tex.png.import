@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/floor_tex.png-cb12c132e9740eaa79824cd631164018.s3tc.stex"
-path.etc="res://.import/floor_tex.png-cb12c132e9740eaa79824cd631164018.etc.stex"
+path="res://.import/floor_tex.png-cb12c132e9740eaa79824cd631164018.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/Textures/floor_tex.png"
-dest_files=[ "res://.import/floor_tex.png-cb12c132e9740eaa79824cd631164018.s3tc.stex", "res://.import/floor_tex.png-cb12c132e9740eaa79824cd631164018.etc.stex" ]
+dest_files=[ "res://.import/floor_tex.png-cb12c132e9740eaa79824cd631164018.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0

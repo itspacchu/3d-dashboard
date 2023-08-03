@@ -24,7 +24,7 @@ layers = 1024
 texture = ExtResource( 2 )
 
 [node name="mapcam" type="Camera" parent="Viewport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25.5854, 0 )
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 25.5854, 0 )
 cull_mask = 1025
 projection = 1
-size = 20.0
+size = 10.0

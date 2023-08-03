@@ -3,16 +3,17 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.s3tc.stex"
+path.etc2="res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.etc2.stex"
 path.etc="res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Textures/curtain.png"
-dest_files=[ "res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.s3tc.stex", "res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.etc.stex" ]
+dest_files=[ "res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.s3tc.stex", "res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.etc2.stex", "res://.import/curtain.png-3c5a78041f36b199a6bc0807c02cd07e.etc.stex" ]
 
 [params]
 

@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BAKED_SMART_ROOM_albedo.png-db4e953f3730b78b3416bbd6d359686a.s3tc.stex"
-path.etc="res://.import/BAKED_SMART_ROOM_albedo.png-db4e953f3730b78b3416bbd6d359686a.etc.stex"
+path="res://.import/BAKED_SMART_ROOM_albedo.png-db4e953f3730b78b3416bbd6d359686a.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/Textures/BAKED_SMART_ROOM_albedo.png"
-dest_files=[ "res://.import/BAKED_SMART_ROOM_albedo.png-db4e953f3730b78b3416bbd6d359686a.s3tc.stex", "res://.import/BAKED_SMART_ROOM_albedo.png-db4e953f3730b78b3416bbd6d359686a.etc.stex" ]
+dest_files=[ "res://.import/BAKED_SMART_ROOM_albedo.png-db4e953f3730b78b3416bbd6d359686a.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.85
+compress/mode=1
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -3,21 +3,22 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.s3tc.stex"
+path.etc2="res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.etc2.stex"
 path.etc="res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Textures/main_tables.png"
-dest_files=[ "res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.s3tc.stex", "res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.etc.stex" ]
+dest_files=[ "res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.s3tc.stex", "res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.etc2.stex", "res://.import/main_tables.png-9c1d35a875d73fe6788a6857a6b260eb.etc.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.85
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

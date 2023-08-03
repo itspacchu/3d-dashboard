@@ -3,16 +3,17 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.s3tc.stex"
+path.etc2="res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.etc2.stex"
 path.etc="res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Textures/himalaya_albedo.png"
-dest_files=[ "res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.s3tc.stex", "res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.etc.stex" ]
+dest_files=[ "res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.s3tc.stex", "res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.etc2.stex", "res://.import/himalaya_albedo.png-2e7d90b3fcc692b6a6df960ef738f951.etc.stex" ]
 
 [params]
 

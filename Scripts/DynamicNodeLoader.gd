@@ -22,3 +22,4 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			n.translation = Vector3(pos["X"],pos["Y"],pos["Z"])
 			n.emoji =  load(node["EMOJI"])
 			add_child(n)
+			yield(get_tree().create_timer(1),"timeout")

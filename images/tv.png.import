@@ -3,21 +3,22 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.s3tc.stex"
+path.etc2="res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.etc2.stex"
 path.etc="res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/tv.png"
-dest_files=[ "res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.s3tc.stex", "res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.etc.stex" ]
+dest_files=[ "res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.s3tc.stex", "res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.etc2.stex", "res://.import/tv.png-2e19dcf5955191b1ab5b3a68a5f8532e.etc.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

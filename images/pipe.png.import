@@ -15,7 +15,7 @@ dest_files=[ "res://.import/pipe.png-6226fdba1e5e129cf4bae0845e8591f4.stex" ]
 [params]
 
 compress/mode=0
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

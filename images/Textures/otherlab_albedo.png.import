@@ -3,21 +3,22 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.s3tc.stex"
+path.etc2="res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.etc2.stex"
 path.etc="res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Textures/otherlab_albedo.png"
-dest_files=[ "res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.s3tc.stex", "res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.etc.stex" ]
+dest_files=[ "res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.s3tc.stex", "res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.etc2.stex", "res://.import/otherlab_albedo.png-cd40a4cd9ed9bfe358984c4adaa18a7d.etc.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.85
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

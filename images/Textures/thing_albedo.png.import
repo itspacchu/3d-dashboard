@@ -15,7 +15,7 @@ dest_files=[ "res://.import/thing_albedo.png-de8c4ac6d60a2a0d85f536fc1714f32d.st
 [params]
 
 compress/mode=0
-compress/lossy_quality=0.85
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -566,7 +566,7 @@ mesh = SubResource( 76 )
 skeleton = NodePath("../../../../WorldEnvironment")
 
 [node name="Vindhya" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
-transform = Transform( 0.990116, 0, 0, 0, 0.878125, 0, 0, 0, 0.990116, 5.59711, -0.0667712, -15.0623 )
+transform = Transform( 0.990116, 0, 0, 0, 0.878125, 0, 0, 0, 0.990116, 5.60152, -0.0895292, -15.0653 )
 mesh = SubResource( 4756 )
 skeleton = NodePath("")
 

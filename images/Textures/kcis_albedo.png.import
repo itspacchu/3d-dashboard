@@ -2,22 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/kcis_albedo.png-7db57a5e652bc5f76f9b7baea379383a.s3tc.stex"
-path.etc="res://.import/kcis_albedo.png-7db57a5e652bc5f76f9b7baea379383a.etc.stex"
+path="res://.import/kcis_albedo.png-7db57a5e652bc5f76f9b7baea379383a.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/Textures/kcis_albedo.png"
-dest_files=[ "res://.import/kcis_albedo.png-7db57a5e652bc5f76f9b7baea379383a.s3tc.stex", "res://.import/kcis_albedo.png-7db57a5e652bc5f76f9b7baea379383a.etc.stex" ]
+dest_files=[ "res://.import/kcis_albedo.png-7db57a5e652bc5f76f9b7baea379383a.stex" ]
 
 [params]
 
-compress/mode=2
-compress/lossy_quality=0.85
+compress/mode=1
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

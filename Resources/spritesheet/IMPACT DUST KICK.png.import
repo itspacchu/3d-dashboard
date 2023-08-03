@@ -3,16 +3,17 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.s3tc.stex"
+path.etc2="res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.etc2.stex"
 path.etc="res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/spritesheet/IMPACT DUST KICK.png"
-dest_files=[ "res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.s3tc.stex", "res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.etc.stex" ]
+dest_files=[ "res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.s3tc.stex", "res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.etc2.stex", "res://.import/IMPACT DUST KICK.png-e38c9bc5d34297cf2b72bdce8692ab89.etc.stex" ]
 
 [params]
 

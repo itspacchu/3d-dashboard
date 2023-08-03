@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:latest as builder
 
 LABEL maintainer="prashantn@riseup.net"
 LABEL description="Godot build system"
@@ -35,4 +35,18 @@ COPY . .
 
 # compile for ${GODOT_EXPORT_TYPE}
 RUN mkdir -p /godotapp/Exports/web/
+
 RUN godot --path /godotapp --export ${GODOT_EXPORT_TYPE}
+
+RUN ls /godotapp/Exports/web/
+
+# === Final Stage ===
+FROM nginx:latest
+
+# Copy the exported files from the builder stage to the Nginx web root
+COPY --from=builder /godotapp/Exports/web/ /var/www/html/
+
+# COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+RUN chmod 777 /var/www/html/
+
+EXPOSE 80

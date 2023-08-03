@@ -90,6 +90,9 @@ config/name="3D Dashboard"
 config/description="iiit Smart city lab's 3D Street view
 https://gitlab.com/scrc-iiit/3d-dashboard"
 run/main_scene="res://Prefabs/Menu.tscn"
+run/disable_stderr=true
+run/flush_stdout_on_print=true
+run/low_processor_mode=true
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://images/scrclogo.png"
@@ -241,7 +244,6 @@ dd={
 
 [physics]
 
-common/physics_fps=120
 common/enable_object_picking=false
 
 [rendering]
@@ -249,10 +251,10 @@ common/enable_object_picking=false
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 misc/lossless_compression/webp_compression_level=5
 quality/directional_shadow/size=2048
 quality/shadow_atlas/size=2048
+quality/reflections/high_quality_ggx=false
 quality/depth_prepass/disable_for_vendors="PowerVR,Mali,Adreno"
 quality/filters/anisotropic_filter_level=1
 environment/default_clear_color=Color( 0, 0, 0, 1 )
