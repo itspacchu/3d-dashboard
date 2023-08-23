@@ -145,8 +145,6 @@ skeleton = NodePath("")
 [node name="SpotLight" type="SpotLight" parent="lamp"]
 transform = Transform( 2.77607, -4.24686e-08, 0.971568, -0.971568, -1.21346e-07, 2.77607, 0, -2.94118, -1.28563e-07, -1.51253, 5.02476, 0 )
 light_energy = 3.0
-shadow_enabled = true
-shadow_reverse_cull_face = true
 spot_range = 2.99705
 spot_angle = 53.7659
 
@@ -256,5 +254,12 @@ margin_right = 192.0
 margin_bottom = 36.0
 text = "Connecting to onem2m"
 align = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -3.36702, 2.94354e-07, 1.28667e-14, 0, -1.47177e-07, 3.36702, 2.94354e-07, 3.36702, 1.47177e-07, 0, 13.7521, 0 )
+layers = 1024
+opacity = 0.4
+double_sided = false
+texture = ExtResource( 7 )
 
 [connection signal="request_completed" from="CONTACT_ONEM2M" to="." method="_on_CONTACT_ONEM2M_request_completed"]

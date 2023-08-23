@@ -52,6 +52,7 @@ static func rand_color(c=0):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node('Control/logo').texture = emoji;
+	get_node("Sprite3D").texture = emoji
 	get_node('Control/WindowDialog/logo').texture = emoji;
 	windowd = get_node('Control/WindowDialog')
 	$Control/logo/Label.text = node_name
@@ -72,9 +73,11 @@ func _process(delta):
 		if(not currently_hovering):
 			if(is_closeby()):
 				logo.modulate.a = 0.75;
+				get_node("Sprite3D").modulate.a = 0.75
 				logo.self_modulate = Color.white
 				logo.scale = Vector2.ONE * 0.75
 			else:
+				get_node("Sprite3D").modulate.a = 0.1
 				logo.modulate.a = 0.1;
 				logo.self_modulate = Color.white
 				logo.scale = Vector2.ONE * 0.5

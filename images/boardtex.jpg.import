@@ -18,7 +18,7 @@ dest_files=[ "res://.import/boardtex.jpg-6f69be53ffc5f726a6ea72afbc572338.s3tc.s
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

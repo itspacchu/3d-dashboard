@@ -15,7 +15,7 @@ dest_files=[ "res://.import/board.jpg-783fca93af64e3559d19feb6321767e0.stex" ]
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.85
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

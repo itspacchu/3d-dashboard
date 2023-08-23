@@ -33,7 +33,7 @@ func _input(event):
 
 		
 		
-func _physics_process(delta):
+func _process(delta):
 	camrot_h += controller_vector.x
 	camrot_v += controller_vector.y
 	camrot_v = clamp(camrot_v, cam_v_min, cam_v_max)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/HTTPRequest.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ShowData.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Prefabs/fontdesho_small_outlined.tres" type="Theme" id=12]
 [ext_resource path="res://Resources/Fonts/firacode.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://addons/controller_icons/assets/xbox360/x.png" type="Texture" id=14]
+[ext_resource path="res://images/blip.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=4]
 size = 11
@@ -40,6 +41,11 @@ font_data = ExtResource( 13 )
 [node name="NodeBase" type="Spatial"]
 script = ExtResource( 2 )
 emoji = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -3.86323, 3.37734e-07, 1.47628e-14, 0, -1.68866e-07, 3.86323, 3.37734e-07, 3.86323, 1.68866e-07, 0, 26.6576, -0.644028 )
+layers = 1024
+texture = ExtResource( 15 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 script = ExtResource( 1 )

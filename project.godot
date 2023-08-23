@@ -248,15 +248,18 @@ common/enable_object_picking=false
 
 [rendering]
 
+quality/filters/sharpen_intensity=0.5
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 misc/lossless_compression/webp_compression_level=5
-quality/directional_shadow/size=2048
-quality/shadow_atlas/size=2048
+quality/reflections/texture_array_reflections=false
 quality/reflections/high_quality_ggx=false
+quality/shading/force_lambert_over_burley=true
+quality/shading/force_blinn_over_ggx=true
 quality/depth_prepass/disable_for_vendors="PowerVR,Mali,Adreno"
 quality/filters/anisotropic_filter_level=1
+quality/filters/use_nearest_mipmap_filter=true
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

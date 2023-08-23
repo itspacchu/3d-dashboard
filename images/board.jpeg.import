@@ -18,7 +18,7 @@ dest_files=[ "res://.import/board.jpeg-a440f4c6add013fdbd9861abe4703bf9.s3tc.ste
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -18,7 +18,7 @@ dest_files=[ "res://.import/sprite_0049.png-b8beb5f3f4a30bf4e99e5b6e85549f65.s3t
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.9
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

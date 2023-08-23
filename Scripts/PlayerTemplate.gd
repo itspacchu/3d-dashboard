@@ -71,12 +71,21 @@ func attack1(): # If not doing other things, start attack1
 		if Input.is_action_just_pressed("attack"):
 			if (is_attacking == false):
 				playback.travel(attack1_node_name)
-				
+
+func _process(delta):
+	if Input.is_action_pressed("aim"):  # Aim/Strafe input and  mechanics
+		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, $Camroot/h.rotation.y, delta * angular_acceleration)
+
+	else: # Normal turn movement mechanics
+		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(direction.x, direction.z) - rotation.y, delta * angular_acceleration)
+	
+			
 func _physics_process(delta):
 	attack1()
 	roll()
 	
 	var on_floor = is_on_floor() # State control for is jumping/falling/landing
+	
 	if(on_floor and not old_onfloor):
 		$walkrun.stream = load("res://Resources/Music/human-impact-on-ground-6982.mp3")
 		$walkrun.play()
@@ -138,12 +147,6 @@ func _physics_process(delta):
 		is_walking = false
 		is_running = false
 		
-	if Input.is_action_pressed("aim"):  # Aim/Strafe input and  mechanics
-		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, $Camroot/h.rotation.y, delta * angular_acceleration)
-
-	else: # Normal turn movement mechanics
-		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(direction.x, direction.z) - rotation.y, delta * angular_acceleration)
-	
 	# Movment mechanics with limitations during rolls/attacks
 	if ((is_attacking == true) or (is_rolling == true)): 
 		horizontal_velocity = horizontal_velocity.linear_interpolate(direction.normalized() * .01 , acceleration * delta)
